@@ -10,3 +10,8 @@ const app = createApp(App)
 app.use(router)
 
 app.mount('#app')
+
+// Ensure correct document title after mount (some hosts cache default)
+if (typeof document !== 'undefined') {
+	document.title = 'BROFA Investment'
+}
