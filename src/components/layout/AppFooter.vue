@@ -111,6 +111,7 @@ const whiteLogoUrl = whiteLogo
   align-items: center;
   gap: 0.5rem;
   font-weight: 200;
+  text-align: left;
 }
 
 .footer-point::before {
