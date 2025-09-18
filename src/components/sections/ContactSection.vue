@@ -48,7 +48,7 @@
         <div class="info-item">
           <div class="info-icon" aria-hidden="true">📍</div>
           <div class="info-content">
-            <p>Ouagadougou, Burkina Faso</p>
+            <p>Tanzania, Dar Es Salaam</p>
           </div>
         </div>
         <div class="info-item">
