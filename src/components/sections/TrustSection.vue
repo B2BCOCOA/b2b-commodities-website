@@ -11,26 +11,50 @@
         </div>
       </div>
 
-      <!-- Partner Logos -->
-      <div class="partners-grid">
-        <div class="partner-logo">
-          <div class="logo-circle white">
-            <img :src="partner1" alt="Partner 1" class="partner-image" />
+      <!-- Partner Logos with Continuous Scroll -->
+      <div class="partners-scroll-container">
+        <div class="partners-scroll-track">
+          <!-- First set of logos -->
+          <div class="partner-logo">
+            <div class="logo-circle white">
+              <img :src="partner1" alt="Partner 1" class="partner-image" />
+            </div>
           </div>
-        </div>
-        <div class="partner-logo">
-          <div class="logo-circle white">
-            <img :src="partner2" alt="Partner 2" class="partner-image" />
+          <div class="partner-logo">
+            <div class="logo-circle white">
+              <img :src="partner2" alt="Partner 2" class="partner-image" />
+            </div>
           </div>
-        </div>
-        <div class="partner-logo">
-          <div class="logo-circle white">
-            <img :src="partner3" alt="Partner 3" class="partner-image" />
+          <div class="partner-logo">
+            <div class="logo-circle white">
+              <img :src="partner3" alt="Partner 3" class="partner-image" />
+            </div>
           </div>
-        </div>
-        <div class="partner-logo">
-          <div class="logo-circle white">
-            <img :src="partner4" alt="Partner 4" class="partner-image" />
+          <div class="partner-logo">
+            <div class="logo-circle white">
+              <img :src="partner4" alt="Partner 4" class="partner-image" />
+            </div>
+          </div>
+          <!-- Duplicate set for seamless loop -->
+          <div class="partner-logo">
+            <div class="logo-circle white">
+              <img :src="partner1" alt="Partner 1" class="partner-image" />
+            </div>
+          </div>
+          <div class="partner-logo">
+            <div class="logo-circle white">
+              <img :src="partner2" alt="Partner 2" class="partner-image" />
+            </div>
+          </div>
+          <div class="partner-logo">
+            <div class="logo-circle white">
+              <img :src="partner3" alt="Partner 3" class="partner-image" />
+            </div>
+          </div>
+          <div class="partner-logo">
+            <div class="logo-circle white">
+              <img :src="partner4" alt="Partner 4" class="partner-image" />
+            </div>
           </div>
         </div>
       </div>
@@ -65,14 +89,42 @@ import partner4 from '@/assets/images/partner_4.png'
   color: var(--text-primary);
 }
 
-.trust-description { font-size:1.05rem; color:var(--text-secondary); line-height:1.55; margin: 0; font-weight: 200; opacity: 0.7; text-align: justify; }
+.trust-description { font-size:1.05rem; color:var(--text-secondary); line-height:1.55; margin: 0; font-weight: 200; opacity: 1; text-align: justify; }
 
-.partners-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:0.1rem; max-width:1400px; margin:2rem auto 0; padding:0 6rem; }
+/* Scrolling Partners Section */
+.partners-scroll-container {
+  overflow: hidden;
+  width: 100%;
+  margin: 2rem auto 0;
+  padding: 2rem 0;
+}
+
+.partners-scroll-track {
+  display: flex;
+  gap: 3rem;
+  animation: scroll-left 20s linear infinite;
+  width: max-content;
+}
+
+/* Pause animation on hover */
+.partners-scroll-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
 .partner-logo {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .logo-circle { width:220px; height:220px; min-width:220px; min-height:220px; max-width:220px; max-height:220px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 18px -8px rgba(0,0,0,.25); transition:.35s; flex-shrink:0; }
@@ -105,19 +157,18 @@ import partner4 from '@/assets/images/partner_4.png'
     margin-bottom: 1rem;
   }
 
-  .partners-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-lg);
-    padding: 0 1.25rem;
+  .partners-scroll-track {
+    gap: 2rem;
+    animation: scroll-left 15s linear infinite;
   }
 
   .logo-circle {
-    width: 100px;
-    height: 100px;
-    min-width: 100px;
-    min-height: 100px;
-    max-width: 100px;
-    max-height: 100px;
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+    min-height: 120px;
+    max-width: 120px;
+    max-height: 120px;
   }
 
   .logo-text {
@@ -130,19 +181,18 @@ import partner4 from '@/assets/images/partner_4.png'
 }
 
 @media (max-width: 480px) {
-  .partners-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-md);
-    padding: 0 0.75rem;
+  .partners-scroll-track {
+    gap: 1.5rem;
+    animation: scroll-left 12s linear infinite;
   }
 
   .logo-circle {
-    width: 80px;
-    height: 80px;
-    min-width: 80px;
-    min-height: 80px;
-    max-width: 80px;
-    max-height: 80px;
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-height: 100px;
   }
 }
 </style>

@@ -103,7 +103,7 @@ const services = ref([
 .icon-image { width:30px; height:30px; object-fit:contain; filter:brightness(0) saturate(100%) invert(38%) sepia(71%) saturate(660%) hue-rotate(93deg) brightness(88%) contrast(94%); opacity:.95; }
 
 .service-content h3 { font-size:1.05rem; font-weight:700; color:rgba(49,49,49,.9); margin:0 0 .55rem; letter-spacing:.3px; }
-.service-description { font-size:.9rem; color:var(--text-secondary); line-height:1.55; text-align:justify; font-weight:400; opacity:.5; }
+.service-description { font-size:.9rem; color:var(--text-secondary); line-height:1.55; text-align:justify; font-weight:400; opacity:0.9; }
 
 /* Mobile: single column layout */
 @media (max-width: 860px) { 
