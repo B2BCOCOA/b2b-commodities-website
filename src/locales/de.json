@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "products": "Produkte",
+    "about": "Über uns",
+    "partners": "Partner",
+    "founder": "Gründer",
+    "contact": "Kontakt"
+  },
+  "home": {
+    "welcome": "Willkommen bei B2B Commodities",
+    "subtitle": "Premium-Rohstoffe für den globalen Handel",
+    "title": "Kakao, Kaffee, Avocadoöl, Baumwolle und mehr..",
+    "learnMore": "Mehr über uns erfahren",
+    "globalReach": "Hochwertige Rohstoffe aus Afrika und Europa.",
+    "reliableDelivery": "Zuverlässige Lieferung und Qualitätssicherung für jede Sendung.",
+    "statsMarquee": [
+      "Langfristige Partnerschaften",
+      "Marktkenntnis",
+      "Internationaler Handel",
+      "Nachhaltiges Sourcing"
+    ]
+  },
+  "about": {
+    "title": "ÜBER UNS",
+    "heading": "Premium-Rohstoffe vom Erzeuger zu globalen Märkten",
+    "description": "Wir sind mehr als eine Handelsgesellschaft.. Wir sind ein vertrauenswürdiges Bindeglied zwischen Erzeugern und Käufern. Wir arbeiten eng mit Partnern in Afrika und Europa zusammen, um hochwertige Rohstoffe zu beschaffen und sie zuverlässig auf internationale Märkte zu liefern.",
+    "missionTitle": "Unsere Mission:",
+    "missionItems": [
+      "Konsistente Qualität und transparente Beschaffung gewährleisten",
+      "Zuverlässige, B2B-orientierte Rohstofflösungen anbieten",
+      "Produkte durch effiziente Logistik und starke Partnerschaften liefern"
+    ],
+    "badgeOne": "Angetrieben von Marktkenntnis, <br/>geleitet von Vertrauen",
+    "badgeTwo": "Verpflichtet zu verantwortungsvollem <br/>und konformem Handel",
+    "checkServices": "Unsere Dienstleistungen prüfen"
+  },
+  "products": {
+    "hero": {
+      "title": "Die Produkte, mit denen wir handeln",
+      "subtitle": "Kakaoprodukte, Rohkaffee, Sojaderivate, Cashew und Sesam, Erdnüsse, exotische Trockenfrüchte, Rohbaumwolle und andere tropische Rohstoffe."
+    },
+    "section1": {
+      "title": "Globales Rohstoff-Sourcing",
+      "description": "Wir beziehen Kakao, Kaffee, Avocadoöl, Baumwolle, Sojabohnen und andere Rohstoffe direkt von unseren vertrauenswürdigen Erzeugern."
+    },
+    "section2": {
+      "title": "Qualitätskontrolle & Inspektion",
+      "description": "Die Produkte werden durch Qualitätsprüfungen und unabhängige Inspektionen verifiziert, um internationale Standards zu erfüllen."
+    },
+    "section3": {
+      "title": "Logistik & Handelsabwicklung",
+      "description": "End-to-End-Koordination von Transport, Dokumentation und Lieferung für effiziente B2B-Transaktionen."
+    }
+  },
+  "partners": {
+    "hero": {
+      "title": "Unsere Partner",
+      "subtitle": "Starke Partnerschaften mit führenden Logistik- und Inspektionsunternehmen unterstützen unsere globalen Lieferkettenaktivitäten"
+    },
+    "card1": {
+      "title": "Zuverlässiger Handel, mit Präzision geliefert",
+      "description": "Wir glauben, dass erfolgreicher Rohstoffhandel von zuverlässigen Partnern, effizienter Logistik und präziser Ausführung in jeder Phase der Lieferkette abhängt."
+    },
+    "card2": {
+      "title": "Qualität, Compliance & Transparenz",
+      "description": "Unsere Zusammenarbeit mit globalen Logistik- und Inspektionspartnern stellt sicher, dass die Produkte internationale Standards erfüllen und wie spezifiziert ankommen."
+    }
+  },
+  "founder": {
+    "hero": {
+      "title": "Den Gründer kennenlernen",
+      "subtitle": "Führung mit globaler Handelsexpertise, aufgebaut auf jahrelanger internationaler Rohstofferfahrung"
+    },
+    "profile": {
+      "badge": "ÜBER DEN GRÜNDER",
+      "title": "Lernen Sie Grzegorz Winiarek kennen",
+      "bio": "Grzegorz Winiarek ist Ökonom und internationaler Rohstoffexperte mit über 20 Jahren Erfahrung im Handel mit Kakao, Kaffee, Baumwolle, Nüssen, Milchprodukten, Fleisch und anderen Schüttgütern. Als Mitbegründer von B2B Commodities verbindet er Lieferanten aus Afrika, Asien und Lateinamerika mit Märkten in Europa und Polen und schafft so globale Handelsmöglichkeiten.",
+      "linkedin": "Besuchen Sie sein LinkedIn",
+      "extra": "Abseits des Geschäftslebens begeistert er sich für Sport und Weltmusik.",
+      "tracksTitle": "Einige seiner Lieblingstracks sind:"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Kontaktieren Sie uns",
+      "subtitle": "Lassen Sie uns über zuverlässige Lösungen für Ihren Rohstoffbedarf sprechen."
+    },
+    "form": {
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "email": "E-Mail",
+      "phone": "Telefon (Optional)",
+      "message": "Nachricht",
+      "placeholder": "Erzählen Sie uns von Ihrem Bedarf...",
+      "submit": "Anfrage senden",
+      "submitting": "Wird gesendet...",
+      "success": "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.",
+      "error": "Entschuldigung, beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+    },
+    "details": {
+      "location": "Tansania, Daressalam",
+      "phone": "+255764709216",
+      "email": "info@brofainvestment.co.tz"
+    }
+  },
+  "footer": {
+    "tagline": {
+      "first": "Aufgebaut auf Erfahrung, starken Partnerschaften,",
+      "second": "und effizienten globalen Lieferketten"
+    },
+    "point1": "Über 20 Jahre Erfahrung",
+    "point2": "Fokus auf Qualität, Compliance und Transparenz",
+    "paragraph": "Durch die Kombination von Marktwissen mit vertrauenswürdigen Logistik- und Inspektionspartnern unterstützen wir einen konsistenten und zuverlässigen Rohstoffhandel.",
+    "links": {
+      "home": "Startseite",
+      "products": "Produkte",
+      "partners": "Partner",
+      "founder": "Gründer",
+      "contact": "Kontakt"
+    },
+    "rights": "Alle Rechte vorbehalten."
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "products": "Produits",
+    "about": "À propos",
+    "partners": "Partenaires",
+    "founder": "Fondateur",
+    "contact": "Contactez-nous"
+  },
+  "home": {
+    "welcome": "Bienvenue chez B2B Commodities",
+    "subtitle": "Marchandises de première qualité pour le commerce mondial",
+    "title": "Cacao, café, huile d'avocat, coton, et plus..",
+    "learnMore": "En savoir plus sur nous",
+    "globalReach": "Produits de haute qualité provenant d'Afrique et d'Europe.",
+    "reliableDelivery": "Livraison fiable et assurance qualité pour chaque expédition.",
+    "statsMarquee": [
+      "Partenariats à long terme",
+      "Expertise du marché",
+      "Commerce international",
+      "Approvisionnement durable"
+    ]
+  },
+  "about": {
+    "title": "À PROPOS DE NOUS",
+    "heading": "Produits de première qualité de la source aux marchés mondiaux",
+    "description": "Nous sommes plus qu'une société de négoce.. Nous sommes un lien de confiance entre producteurs et acheteurs. Nous travaillons en étroite collaboration avec des partenaires à travers l'Afrique et l'Europe pour sourcer des produits de haute qualité et les livrer de manière fiable sur les marchés internationaux.",
+    "missionTitle": "Notre mission :",
+    "missionItems": [
+      "Assurer une qualité constante et un approvisionnement transparent",
+      "Fournir des solutions de marchandises fiables et axées sur le B2B",
+      "Livrer des produits grâce à une logistique efficace et des partenariats solides"
+    ],
+    "badgeOne": "Animés par l'expertise du marché, <br/>guidés par la confiance",
+    "badgeTwo": "Engagés dans un commerce responsable <br/>et conforme",
+    "checkServices": "Consulter nos services"
+  },
+  "products": {
+    "hero": {
+      "title": "Les produits que nous négocions",
+      "subtitle": "Produits à base de cacao, café vert, dérivés de soja, noix de cajou et sésame, arachides, fruits secs exotiques, coton brut et autres produits tropicaux."
+    },
+    "section1": {
+      "title": "Sourcing mondial de marchandises",
+      "description": "Nous sourçons le cacao, le café, l'huile d'avocat, le coton, le soja et d'autres marchandises directement auprès de nos producteurs de confiance."
+    },
+    "section2": {
+      "title": "Contrôle qualité et inspection",
+      "description": "Les produits sont vérifiés par des contrôles qualité et des inspections indépendantes pour répondre aux normes internationales."
+    },
+    "section3": {
+      "title": "Logistique et exécution commerciale",
+      "description": "Coordination de bout en bout du transport, de la documentation et de la livraison pour des transactions B2B efficaces."
+    }
+  },
+  "partners": {
+    "hero": {
+      "title": "Nos partenaires",
+      "subtitle": "Des partenariats solides avec des entreprises de logistique et d'inspection de premier plan soutiennent nos opérations de chaîne d'approvisionnement mondiale"
+    },
+    "card1": {
+      "title": "Commerce fiable, livré avec précision",
+      "description": "Nous pensons que le commerce réussi des marchandises dépend de partenaires fiables, d'une logistique efficace et d'une exécution précise à chaque étape de la chaîne d'approvisionnement."
+    },
+    "card2": {
+      "title": "Qualité, conformité et transparence",
+      "description": "Notre coopération avec des partenaires mondiaux de logistique et d'inspection garantit que les produits répondent aux normes internationales et arrivent comme spécifié."
+    }
+  },
+  "founder": {
+    "hero": {
+      "title": "Connaître le fondateur",
+      "subtitle": "Leadership avec une expertise commerciale mondiale bâtie sur des années d'expérience internationale des marchandises"
+    },
+    "profile": {
+      "badge": "À PROPOS DU FONDATEUR",
+      "title": "Rencontrez Grzegorz Winiarek",
+      "bio": "Grzegorz Winiarek est un économiste et expert en marchandises internationales avec plus de 20 ans d'expérience dans le commerce du cacao, du café, du coton, des noix, des produits laitiers, de la viande et d'autres produits en vrac. En tant que co-fondateur de B2B Commodities, il met en relation des fournisseurs d'Afrique, d'Asie et d'Amérique latine avec des marchés en Europe et en Pologne, créant ainsi des opportunités commerciales mondiales.",
+      "linkedin": "Visitez son LinkedIn",
+      "extra": "Au-delà des affaires, il est passionné par le sport et les musiques du monde.",
+      "tracksTitle": "Certains de ses morceaux préférés incluent :"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Contactez-nous",
+      "subtitle": "Discutons de solutions fiables pour vos besoins en approvisionnement de marchandises."
+    },
+    "form": {
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Email",
+      "phone": "Téléphone (Optionnel)",
+      "message": "Message",
+      "placeholder": "Parlez-nous de vos besoins...",
+      "submit": "Envoyer la demande",
+      "submitting": "Envoi en cours...",
+      "success": "Merci ! Votre message a été envoyé avec succès.",
+      "error": "Désolé, une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer."
+    },
+    "details": {
+      "location": "Tanzanie, Dar Es Salaam",
+      "phone": "+255764709216",
+      "email": "info@brofainvestment.co.tz"
+    }
+  },
+  "footer": {
+    "tagline": {
+      "first": "Bâti sur l'expérience, des partenariats solides,",
+      "second": "et des chaînes d'approvisionnement mondiales efficaces"
+    },
+    "point1": "Plus de 20 ans d'expérience",
+    "point2": "Axé sur la qualité, la conformité et la transparence",
+    "paragraph": "En combinant connaissance du marché et partenaires logistiques et d'inspection de confiance, nous soutenons un commerce de marchandises constant et fiable.",
+    "links": {
+      "home": "Accueil",
+      "products": "Produits",
+      "partners": "Partenaires",
+      "founder": "Fondateur",
+      "contact": "Contact"
+    },
+    "rights": "Tous droits réservés."
+  }
+}

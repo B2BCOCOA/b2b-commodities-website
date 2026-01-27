@@ -1,8 +1,7 @@
 {
   "recommendations": [
     "Vue.volar",
-    "dbaeumer.vscode-eslint",
-    "EditorConfig.EditorConfig",
+    "ms-playwright.playwright",
     "esbenp.prettier-vscode"
   ]
 }

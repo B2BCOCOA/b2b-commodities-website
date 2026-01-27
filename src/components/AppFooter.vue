@@ -4,36 +4,35 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Company Info -->
         <div class="footer-section">
-          <h3 class="footer-title">Brofa Investment Limited</h3>
+          <h3 class="footer-title">B2B Commodities</h3>
           <p class="footer-text">
-            Your trusted partner in investment and financial growth. 
-            Building wealth and securing futures since our establishment.
+            {{ $t('footer.description') }}
           </p>
         </div>
 
         <!-- Quick Links -->
         <div class="footer-section">
-          <h4 class="footer-title">Quick Links</h4>
+          <h4 class="footer-title">{{ $t('footer.linksTitle') }}</h4>
           <ul class="footer-links">
-            <li><a href="#home" class="footer-link">Home</a></li>
-            <li><a href="#about" class="footer-link">About Us</a></li>
-            <li><a href="#services" class="footer-link">Services</a></li>
-            <li><a href="#contact" class="footer-link">Contact</a></li>
+            <li><router-link to="/" class="footer-link">{{ $t('nav.home') }}</router-link></li>
+            <li><router-link to="/about" class="footer-link">{{ $t('nav.about') }}</router-link></li>
+            <li><router-link to="/products" class="footer-link">{{ $t('nav.products') }}</router-link></li>
+            <li><router-link to="/contact" class="footer-link">{{ $t('nav.contact') }}</router-link></li>
           </ul>
         </div>
 
         <!-- Contact Info -->
         <div class="footer-section">
-          <h4 class="footer-title">Contact Info</h4>
+          <h4 class="footer-title">{{ $t('footer.contactTitle') }}</h4>
           <div class="footer-contact">
             <p class="footer-text">
-              <strong>Email:</strong> info@brofainvestment.com
+              <strong>Email:</strong> {{ $t('contact.details.email') }}
             </p>
             <p class="footer-text">
-              <strong>Phone:</strong> +1 (555) 123-4567
+              <strong>Phone:</strong> {{ $t('contact.details.phone') }}
             </p>
             <p class="footer-text">
-              <strong>Address:</strong> 123 Business St, Finance District
+              <strong>Address:</strong> {{ $t('contact.details.location') }}
             </p>
           </div>
         </div>
@@ -43,7 +42,7 @@
       <div class="footer-bottom">
         <div class="flex flex-col md:flex-row items-center justify-between gap-4">
           <p class="footer-copyright">
-            © {{ currentYear }} Brofa Investment Limited. All rights reserved.
+            © {{ currentYear }} Brofa Investment Limited. {{ $t('footer.rights') }}
           </p>
           <div class="footer-social">
             <a href="#" class="social-link" aria-label="LinkedIn">

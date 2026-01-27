@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "partners": "Partners",
+    "founder": "Founder",
+    "contact": "Contact Us"
+  },
+  "home": {
+    "welcome": "Welcome to B2B Commodities",
+    "subtitle": "Premium Commodities for Global Trade",
+    "title": "Cocoa, coffee, avocado oil, cotton, and more..",
+    "learnMore": "Learn More About Us",
+    "globalReach": "High-quality commodities sourced from Africa and Europe.",
+    "reliableDelivery": "Reliable delivery and quality assurance for every shipment.",
+    "statsMarquee": [
+      "Long-Term Partnerships",
+      "Market Expertise",
+      "International Trade",
+      "Sustainable Sourcing"
+    ]
+  },
+  "about": {
+    "title": "ABOUT US",
+    "heading": "Premium commodities from source to global markets",
+    "description": "We're more than a trading company.. We are a trusted link between producers and buyers. We work closely with partners across Africa and Europe to source high-quality commodities and deliver them reliably to international markets.",
+    "missionTitle": "Our Mission:",
+    "missionItems": [
+      "Ensure consistent quality and transparent sourcing",
+      "Provide reliable, B2B-focused commodity solutions",
+      "Deliver products through efficient logistics and strong partnerships"
+    ],
+    "badgeOne": "Driven by Market Expertise, <br/>Guided by Trust",
+    "badgeTwo": "Committed to Responsible & <br/>Compliant Trade",
+    "checkServices": "Check Our Services"
+  },
+  "products": {
+    "hero": {
+      "title": "The Products We Trade",
+      "subtitle": "Cocoa products, green coffee, soya derivatives, cashew and sesame, groundnuts, exotic dried fruits, raw cotton, and other tropical commodities."
+    },
+    "section1": {
+      "title": "Global Commodity Sourcing",
+      "description": "We source cocoa, coffee, avocado oil, cotton, soybeans, and other commodities directly from our trusted producers."
+    },
+    "section2": {
+      "title": "Quality Control & Inspection",
+      "description": "Products are verified through quality checks and independent inspections to meet international standards."
+    },
+    "section3": {
+      "title": "Logistics & Trade Execution",
+      "description": "End-to-end coordination of transport, documentation, and delivery for efficient B2B transactions."
+    }
+  },
+  "partners": {
+    "hero": {
+      "title": "Our Partners",
+      "subtitle": "Strong partnerships with leading logistics and inspection companies support our global supply chain operations"
+    },
+    "card1": {
+      "title": "Reliable Trade, Delivered with Precision",
+      "description": "We believe successful commodity trading depends on reliable partners, efficient logistics, and precise execution at every stage of the supply chain."
+    },
+    "card2": {
+      "title": "Quality, Compliance & Transparency",
+      "description": "Our cooperation with global logistics and inspection partners ensures products meet international standards and arrive as specified."
+    }
+  },
+  "founder": {
+    "hero": {
+      "title": "Know The Founder",
+      "subtitle": "Leadership with Global Trade Expertise Built on Years of International Commodity Experience"
+    },
+    "profile": {
+      "badge": "ABOUT THE FOUNDER",
+      "title": "Meet Grzegorz Winiarek",
+      "bio": "Grzegorz Winiarek is an economist and international commodities expert with over 20 years of experience in trading cocoa, coffee, cotton, nuts, dairy, meat, and other bulk products. As co-founder of B2B Commodities, he connects suppliers from Africa, Asia, and Latin America with markets in Europe and Poland, creating global trade opportunities.",
+      "linkedin": "Visit his LinkedIn",
+      "extra": "Beyond business, he is passionate about sports and world music.",
+      "tracksTitle": "Some of his favorite tracks include:"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Contact Us",
+      "subtitle": "Let’s discuss reliable solutions for your commodity sourcing needs."
+    },
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone (Optional)",
+      "message": "Message",
+      "placeholder": "Tell us about your needs...",
+      "submit": "Submit Inquiry",
+      "submitting": "Submitting...",
+      "success": "Thank you! Your message has been sent successfully.",
+      "error": "Sorry, there was an error sending your message. Please try again."
+    },
+    "details": {
+      "location": "Tanzania, Dar Es Salaam",
+      "phone": "+255764709216",
+      "email": "info@brofainvestment.co.tz"
+    }
+  },
+  "footer": {
+    "tagline": {
+      "first": "Built on experience, strong partnerships,",
+      "second": "and efficient global supply chains"
+    },
+    "point1": "Experienced for more than 20 years",
+    "point2": "Focused on quality, compliance, and transparency",
+    "paragraph": "By combining market knowledge with trusted logistics and inspection partners, we support consistent and dependable commodity trade.",
+    "links": {
+      "home": "Home",
+      "products": "Products",
+      "partners": "Partners",
+      "founder": "Founder",
+      "contact": "Contact"
+    },
+    "rights": "All rights reserved."
+  }
+}

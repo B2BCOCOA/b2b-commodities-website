@@ -3,20 +3,20 @@
     <div class="container">
       <div class="navbar-content">
         <!-- Logo -->
-        <a href="#home" class="nav-brand" aria-label="Brofa Investment Limited Home">
-          <img :src="logo" alt="Brofa Investment Limited" class="brand-logo" />
-        </a>
+        <router-link to="/" class="nav-brand" aria-label="B2B Commodities Home">
+          <img :src="logo" alt="B2B Commodities" class="brand-logo" />
+        </router-link>
 
         <!-- Desktop Navigation -->
         <div class="nav-links desktop-nav">
-          <a href="#home" class="nav-link active">Home</a>
-          <a href="#about" class="nav-link">About Us</a>
-          <a href="#services" class="nav-link">Services</a>
-          <a href="#contact" class="nav-link">Contact</a>
+          <router-link to="/" class="nav-link">{{ $t('nav.home') }}</router-link>
+          <router-link to="/products" class="nav-link">{{ $t('nav.products') }}</router-link>
+          <router-link to="/partners" class="nav-link">{{ $t('nav.partners') }}</router-link>
+          <router-link to="/founder" class="nav-link">{{ $t('nav.founder') }}</router-link>
+          <router-link to="/contact" class="nav-button">{{ $t('nav.contact') }}</router-link>
+          <LanguageSwitcher />
         </div>
         
-        <!-- Spacer for layout balance -->
-        <div class="nav-spacer"></div>
 
         <!-- Mobile Menu Toggle -->
         <button class="mobile-menu-toggle" @click="toggleMobileMenu">
@@ -28,10 +28,14 @@
         <!-- Mobile Navigation (rendered only when open) -->
         <div v-if="isMobileMenuOpen" :class="['mobile-menu', { open: isMobileMenuOpen }]">
           <div class="nav-links">
-            <a href="#home" class="nav-link" @click="closeMobileMenu">Home</a>
-            <a href="#about" class="nav-link" @click="closeMobileMenu">About Us</a>
-            <a href="#services" class="nav-link" @click="closeMobileMenu">Services</a>
-            <a href="#contact" class="nav-link" @click="closeMobileMenu">Contact</a>
+            <router-link to="/" class="nav-link" @click="closeMobileMenu">{{ $t('nav.home') }}</router-link>
+            <router-link to="/products" class="nav-link" @click="closeMobileMenu">{{ $t('nav.products') }}</router-link>
+            <router-link to="/partners" class="nav-link" @click="closeMobileMenu">{{ $t('nav.partners') }}</router-link>
+            <router-link to="/founder" class="nav-link" @click="closeMobileMenu">{{ $t('nav.founder') }}</router-link>
+            <router-link to="/contact" class="nav-button mobile-btn" @click="closeMobileMenu">{{ $t('nav.contact') }}</router-link>
+            <div class="mobile-switcher-wrapper">
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       </div>
@@ -41,7 +45,9 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import logo from '@/assets/images/brofa_logo.png'
+import { RouterLink } from 'vue-router'
+import LanguageSwitcher from '@/components/LanguageSwitcher.vue'
+import logo from '@/assets/images/logo-placeholder.png'
 
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
@@ -56,6 +62,7 @@ const toggleMobileMenu = () => {
 
 const closeMobileMenu = () => {
   isMobileMenuOpen.value = false
+  window.scrollTo({ top: 0, behavior: 'instant' })
 }
 
 onMounted(() => {
@@ -91,33 +98,55 @@ onUnmounted(() => {
   position: relative;
   height: 100%;
   min-height: 60px; /* ensure consistent height */
+  padding-right: 6rem; /* Match hero right padding */
 }
 
 .desktop-nav {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   gap: var(--space-3xl);
+  align-items: center;
+  margin-left: auto; /* Push to the right */
 }
 
-.nav-spacer {
-  width: 1px; /* Invisible spacer for layout balance */
-}
 
-.nav-brand { display:flex; align-items:center; gap:.65rem; font-weight:700; color:var(--primary-color); text-decoration:none; height:100%; }
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+  height: 100%;
+  padding-left: 6rem; /* Match hero left padding */
+  outline: none;
+}
 .brand-logo { height:42px; width:auto; display:block; object-fit:contain; transition:transform .35s; }
 .navbar.scrolled .brand-logo { height:38px; }
 .nav-brand:hover .brand-logo { transform:translateY(-2px) scale(1.02); }
 
 /* Moved to .navbar-content styles above */
 
-.nav-link { font-weight:400; color: var(--text-secondary); transition: color var(--transition-fast), font-weight var(--transition-fast); position:relative; text-decoration:none; }
+.nav-link { font-weight:400; color: var(--text-secondary); transition: color var(--transition-fast), font-weight var(--transition-fast); position:relative; text-decoration:none; outline: none; }
 .nav-link:hover { color: var(--text-primary); }
-/* Active (current section) – higher contrast & bolder, no color shift */
-.nav-link.active { color: var(--text-primary); font-weight:700; }
-/* Remove previous underline decoration */
-.nav-link.active::after { display:none !important; content:none; }
+/* Active (current page) – higher contrast & bolder */
+.nav-link.router-link-exact-active { color: var(--primary-color); font-weight:700; }
+.nav-link.router-link-active { color: var(--text-primary); }
+
+.nav-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color var(--transition-fast);
+  white-space: nowrap;
+  outline: none;
+}
+
+.nav-button:hover {
+  background-color: var(--primary-dark);
+}
 
 .mobile-menu-toggle {
   display: none;

@@ -1,0 +1,124 @@
+{
+  "nav": {
+    "home": "Strona główna",
+    "products": "Produkty",
+    "about": "O nas",
+    "partners": "Partnerzy",
+    "founder": "Założyciel",
+    "contact": "Kontakt"
+  },
+  "home": {
+    "welcome": "Witamy w B2B Commodities",
+    "subtitle": "Towary premium dla handlu światowego",
+    "title": "Kakao, kawa, olej z awokado, bawełna i więcej..",
+    "learnMore": "Dowiedz się więcej o nas",
+    "globalReach": "Wysokiej jakości towary pozyskiwane z Afryki i Europy.",
+    "reliableDelivery": "Niezawodna dostawa i gwarancja jakości dla każdej przesyłki.",
+    "statsMarquee": [
+      "Długofalowe partnerstwa",
+      "Ekspertyza rynkowa",
+      "Handel międzynarodowy",
+      "Zrównoważone pozyskiwanie"
+    ]
+  },
+  "about": {
+    "title": "O NAS",
+    "heading": "Towary premium od źródła na rynki światowe",
+    "description": "Jesteśmy czymś więcej niż firmą handlową.. Jesteśmy zaufanym ogniwem między producentami a nabywcami. Współpracujemy ściśle z partnerami w całej Afryce i Europie aby pozyskiwać towary najwyższej jakości i dostarczać je niezawodnie na rynki międzynarodowe.",
+    "missionTitle": "Nasza misja:",
+    "missionItems": [
+      "Zapewnienie spójnej jakości i przejrzystego pozyskiwania",
+      "Dostarczanie niezawodnych rozwiązań towarowych zorientowanych na B2B",
+      "Dostarczanie produktów poprzez wydajną logistykę i silne partnerstwa"
+    ],
+    "badgeOne": "Napędzani ekspertyzą rynkową, <br/>kierowani zaufaniem",
+    "badgeTwo": "Zaangażowani w odpowiedzialny i <br/>zgodny handel",
+    "checkServices": "Sprawdź nasze usługi"
+  },
+  "products": {
+    "hero": {
+      "title": "Produkty, którymi handlujemy",
+      "subtitle": "Produkty kakaowe, kawa zielona, pochodne soi, nerkowce i sezam, orzeszki ziemne, egzotyczne owoce suszone, bawełna surowa i inne towary tropikalne."
+    },
+    "section1": {
+      "title": "Globalne pozyskiwanie towarów",
+      "description": "Pozyskujemy kakao, kawę, olej z awokado, bawełnę, soję i inne towary bezpośrednio od naszych zaufanych producentów."
+    },
+    "section2": {
+      "title": "Kontrola jakości i inspekcja",
+      "description": "Produkty są weryfikowane poprzez kontrole jakości i niezależne inspekcje w celu spełnienia międzynarodowych standardów."
+    },
+    "section3": {
+      "title": "Logistyka i realizacja handlu",
+      "description": "Kompleksowa koordynacja transportu, dokumentacji i dostaw dla wydajnych transakcji B2B."
+    }
+  },
+  "partners": {
+    "hero": {
+      "title": "Nasi partnerzy",
+      "subtitle": "Silne partnerstwa z wiodącymi firmami logistycznymi i inspekcyjnymi wspierają nasze globalne operacje w łańcuchu dostaw"
+    },
+    "card1": {
+      "title": "Niezawodny handel, dostarczany z precyzją",
+      "description": "Wierzymy, że udany handel towarami zależy od niezawodnych partnerów, wydajnej logistyki i precyzyjnej realizacji na każdym etapie łańcucha dostaw."
+    },
+    "card2": {
+      "title": "Jakość, zgodność i przejrzystość",
+      "description": "Nasza współpraca z globalnymi partnerami logistycznymi i inspekcyjnymi gwarantuje, że produkty spełniają międzynarodowe standardy i docierają zgodnie ze specyfikacją."
+    }
+  },
+  "founder": {
+    "hero": {
+      "title": "Poznaj założyciela",
+      "subtitle": "Przywództwo z globalną ekspertyzą handlową zbudowaną na latach międzynarodowego doświadczenia w branży towarowej"
+    },
+    "profile": {
+      "badge": "O ZAŁOŻYCIELU",
+      "title": "Poznaj Grzegorza Winiarek",
+      "bio": "Grzegorz Winiarek jest ekonomistą i ekspertem w dziedzinie towarów międzynarodowych z ponad 20-letnim doświadczeniem w handlu kakao, kawą, bawełną, orzechami, nabiałem, mięsem i innymi produktami masowymi. Jako współzałożyciel B2B Commodities łączy dostawców z Afryki, Azji i Ameryki Łacińskiej z rynkami w Europie i Polsce, tworząc globalne możliwości handlowe.",
+      "linkedin": "Odwiedź jego LinkedIn",
+      "extra": "Poza biznesem pasjonuje się sportem i muzyką świata.",
+      "tracksTitle": "Niektóre z jego ulubionych utworów to:"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Skontaktuj się z nami",
+      "subtitle": "Porozmawiajmy o niezawodnych rozwiązaniach dla Twoich potrzeb w zakresie pozyskiwania towarów."
+    },
+    "form": {
+      "firstName": "Imię",
+      "lastName": "Nazwisko",
+      "email": "E-mail",
+      "phone": "Telefon (Opcjonalnie)",
+      "message": "Wiadomość",
+      "placeholder": "Opowiedz nam o swoich potrzebach...",
+      "submit": "Wyślij zapytanie",
+      "submitting": "Wysyłanie...",
+      "success": "Dziękujemy! Twoja wiadomość została wysłana pomyślnie.",
+      "error": "Przepraszamy, wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie."
+    },
+    "details": {
+      "location": "Tanzania, Dar Es Salaam",
+      "phone": "+255764709216",
+      "email": "info@brofainvestment.co.tz"
+    }
+  },
+  "footer": {
+    "tagline": {
+      "first": "Zbudowani na doświadczeniu, silnych partnerstwach,",
+      "second": "i wydajnych globalnych łańcuchach dostaw"
+    },
+    "point1": "Ponad 20 lat doświadczenia",
+    "point2": "Skupieni na jakości, zgodności i przejrzystości",
+    "paragraph": "Łącząc wiedzę rynkową z zaufanymi partnerami logistycznymi i inspekcyjnymi, wspieramy spójny i niezawodny handel towarami.",
+    "links": {
+      "home": "Strona główna",
+      "products": "Produkty",
+      "partners": "Partnerzy",
+      "founder": "Założyciel",
+      "contact": "Kontakt"
+    },
+    "rights": "Wszelkie prawa zastrzeżone."
+  }
+}

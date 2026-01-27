@@ -1,45 +1,316 @@
+<script setup>
+import { useI18n } from 'vue-i18n'
+// Placeholder images - replace with actual commodity images
+import img1 from '@/assets/images/hero-section-pic-1.jpg'
+import img2 from '@/assets/images/hero-section-pic-2.jpg'
+import img3 from '@/assets/images/hero-section-pic-3.jpg'
+import img4 from '@/assets/images/hero_section_background.jpg'
+import bgImage from '@/assets/images/home-about-section-background.jpg'
+import sparkIcon from '@/assets/images/iconoir_spark-solid-brown.png'
+
+const { tm } = useI18n()
+</script>
+
 <template>
-  <section class="about-section" id="about">
-    <div class="container">
-      <div class="about-content">
-        <h2 class="section-title">Get to know more about<br><span class="accent">Brofa Investment</span></h2>
-        
-        <div class="about-grid">
-          <div class="about-panel">
-            <p>
-              At Brofa Investment, we are dedicated to enhancing agricultural trade and productivity. We specialize in
-              import and export, ensuring prompt delivery of agri inputs, general supplies, and reliable transport & logistics services.
-            </p>
+  <section class="about-section">
+    <div class="about-container">
+      <!-- Left: Image Grid -->
+      <div class="about-images">
+        <div class="image-grid">
+          <div class="grid-item">
+            <img :src="img1" alt="Cocoa" />
           </div>
-          <div class="about-copy">
-            <p>
-              Our commitment to quality and innovation in merchant trading propels us to be a leading partner for agricultural enterprises seeking to thrive in a competitive market. Join us as we foster sustainable growth and efficiency in the agricultural sector.
-            </p>
+          <div class="grid-item">
+            <img :src="img2" alt="Soybeans" />
+          </div>
+          <div class="grid-item">
+            <img :src="img3" alt="Cotton" />
+          </div>
+          <div class="grid-item">
+            <img :src="img4" alt="Coffee" />
           </div>
         </div>
+      </div>
+
+      <!-- Right: Content -->
+      <div class="about-content">
+        <div class="about-tag">
+          <img :src="sparkIcon" alt="" class="tag-icon" />
+          {{ $t('about.title') }}
+        </div>
+        <h2 class="about-title">{{ $t('about.heading') }}</h2>
+        <p class="about-description">
+          {{ $t('about.description') }}
+        </p>
+
+        <div class="mission-section">
+          <h3>{{ $t('about.missionTitle') }}</h3>
+          <div class="mission-list">
+            <div v-for="(item, index) in tm('about.missionItems')" :key="index" class="mission-item">
+              <svg class="check-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>{{ item }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="badges">
+          <div class="badge-item">
+            <div class="badge-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            </div>
+            <div class="badge-text">
+              <strong v-html="$t('about.badgeOne')"></strong>
+            </div>
+          </div>
+          <div class="badge-item">
+            <div class="badge-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            </div>
+            <div class="badge-text">
+              <strong v-html="$t('about.badgeTwo')"></strong>
+            </div>
+          </div>
+        </div>
+
+        <a href="#services" class="cta-button">
+          <span>{{ $t('about.checkServices') }}</span>
+          <div class="btn-icon">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 </template>
 
-<script setup>
-// No additional logic needed for this component
-</script>
-
 <style scoped>
-.about-section { padding: clamp(3.5rem,7vw,5.5rem) 0; background: var(--background-light); }
+.about-section {
+  padding: 6rem 6rem;
+  background-image: url('@/assets/images/home-about-section-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
 
-.about-content { max-width: 1200px; margin: 0 auto; }
+.about-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.88);
+  z-index: 1;
+}
 
-.section-title { font-size:clamp(2rem,3.2vw,2.6rem); font-weight:600; line-height:1.25; color:var(--text-primary); text-align:center; margin:0 0 3rem; }
-.section-title .accent { color: var(--primary-color); font-weight:700; }
+.about-container {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
 
-.about-grid { display:grid; grid-template-columns: 1fr 1fr; gap:2.75rem; align-items:center; }
-.about-panel { background:url('@/assets/images/about_section_background.jpg') center/cover no-repeat; color:#fff; border-radius:.85rem; padding:1.25rem 1.25rem 1.25rem; position:relative; min-height:170px; display:flex; align-items:flex-end; box-shadow:0 14px 34px -14px rgba(0,0,0,.4); }
-.about-panel::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.55); border-radius:inherit; }
-.about-panel p { position:relative; z-index:1; font-size:1.05rem; line-height:1.55; font-weight:300; letter-spacing:.25px; color:#fff; text-align:justify; padding:0 1rem; opacity:0.85; }
-.about-copy p { font-size:1.05rem; color:var(--text-secondary); line-height:1.7; text-align:justify; }
+/* Left: Image Grid */
+.about-images {
+  flex: 0 0 45%;
+}
 
-@media (max-width: 860px) { .about-grid { grid-template-columns:1fr; gap:2rem; } .about-panel { min-height:200px; } }
-@media (max-width: 640px) { .section-title { font-size:2.1rem; } .about-copy p { font-size:1rem; } }
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.grid-item {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Right: Content */
+.about-content {
+  flex: 1;
+}
+
+.about-tag {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tag-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  color: #542612;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.about-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.mission-section h3 {
+  font-size: 1.25rem;
+  color: #1a2b4a;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.mission-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.mission-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.check-icon {
+  color: white;
+  background-color: var(--primary-color);
+  padding: 4px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.mission-item span {
+  color: #374151;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.badges {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.badge-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.badge-icon {
+  width: 48px;
+  height: 48px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.badge-text {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #542612;
+}
+
+.badge-text strong {
+  font-weight: 600;
+  display: block;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5rem 0.5rem 0.5rem 1.25rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color var(--transition-fast);
+}
+
+.cta-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-icon {
+  background-color: white;
+  color: var(--primary-color);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .about-section {
+    padding: 4rem 3rem;
+  }
+
+  .about-container {
+    flex-direction: column-reverse;
+    gap: 3rem;
+  }
+
+  .about-images {
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 3rem 2rem;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .badges {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
 </style>

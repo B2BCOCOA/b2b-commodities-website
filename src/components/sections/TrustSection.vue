@@ -89,7 +89,7 @@ import partner4 from '@/assets/images/partner_4.png'
   color: var(--text-primary);
 }
 
-.trust-description { font-size:1.05rem; color:var(--text-secondary); line-height:1.55; margin: 0; font-weight: 200; opacity: 1; text-align: justify; }
+.trust-description { font-size:1.05rem; color:var(--text-secondary); line-height:1.55; margin: 0; font-weight: 400; opacity: 1; text-align: justify; }
 
 /* Scrolling Partners Section */
 .partners-scroll-container {

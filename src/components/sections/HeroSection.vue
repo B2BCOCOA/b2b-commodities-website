@@ -1,281 +1,459 @@
+<script setup>
+import { useI18n } from 'vue-i18n'
+import mainImg from '@/assets/images/hero-section-pic-1.jpg'
+import innerImg1 from '@/assets/images/hero-section-pic-2.jpg'
+import innerImg2 from '@/assets/images/hero-section-pic-3.jpg'
+import sparkIcon from '@/assets/images/iconoir_spark-solid-brown.png'
+import whiteSparkIcon from '@/assets/images/iconoir_spark-solid-white.png'
+
+const { tm } = useI18n()
+</script>
+
 <template>
-  <section id="home" class="hero-wrapper">
-    <div class="container">
-      <div class="hero-surface">
-        <video
-          ref="videoA"
-          class="hero-video"
-          :class="{ visible: currentIndex === 0 }"
-          :src="sources[0]"
-          muted
-          playsinline
-        ></video>
-        <video
-          ref="videoB"
-          class="hero-video"
-          :class="{ visible: currentIndex === 1 }"
-          :src="sources[1]"
-          muted
-          playsinline
-        ></video>
-        <video
-          ref="videoC"
-          class="hero-video"
-          :class="{ visible: currentIndex === 2 }"
-          :src="sources[2]"
-          muted
-          playsinline
-        ></video>
-        <div class="hero-bg" />
-        <div class="hero-inner">
-          <div class="hero-copy">
-            <p class="eyebrow">#1 Agricultural Partner in Ruvuma</p>
-            <h1>Empowering Growth in<br />Agriculture and Beyond</h1>
-            <div class="cta-row">
-              <a href="#services" class="cta ghost">Our Services ↗</a>
-              <a href="#contact" class="cta primary">Get in touch ↗</a>
+  <section class="hero-section">
+    <div class="hero-container">
+      <!-- Left Part (60%) -->
+      <div class="hero-left">
+        <div class="hero-header">
+          <p class="hero-subtitle">
+            <img :src="sparkIcon" alt="" class="subtitle-icon" />
+            {{ $t('home.subtitle') }}
+          </p>
+          <h1 class="hero-title">{{ $t('home.title') }}</h1>
+        </div>
+
+        <div class="hero-inner-split">
+          <!-- Inner Left: Button and Texts -->
+          <div class="hero-inner-left-col">
+            <a href="#contact" class="hero-btn">
+              <span>{{ $t('home.learnMore') }}</span>
+              <div class="btn-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </a>
+            
+            <div class="hero-actions-info">
+              <div class="info-item">
+                <div class="info-icon-circle">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  </svg>
+                </div>
+                <p>{{ $t('home.globalReach') }}</p>
+              </div>
+              
+              <div class="info-divider"></div>
+
+              <div class="info-item">
+                <div class="info-icon-circle">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                </div>
+                <p>{{ $t('home.reliableDelivery') }}</p>
+              </div>
             </div>
           </div>
-          <!-- Floating Stats Bar -->
-          <div class="stats-bar">
-            <div class="stat">
-              <span class="value">+{{ stat1 }}</span>
-              <span class="label">Years serving agricultural enterprises</span>
+
+          <!-- Inner Right: Two Photos Vertical -->
+          <div class="hero-inner-photos">
+            <div class="photo-wrapper">
+              <img :src="innerImg1" alt="Agriculture detail" />
             </div>
-            <div class="divider" />
-            <div class="stat">
-              <span class="value">+{{ stat2 }}</span>
-              <span class="label">Agricultural products supplied nationwide</span>
-            </div>
-            <div class="divider" />
-            <div class="stat">
-              <span class="value">+{{ stat3 }}</span>
-              <span class="label">Farmers and businesses supported</span>
+            <div class="photo-wrapper">
+              <img :src="innerImg2" alt="Farming operation" />
             </div>
           </div>
         </div>
       </div>
+
+      <div class="hero-right">
+        <img :src="mainImg" alt="B2B Commodities Hero" class="main-hero-image" />
+      </div>
     </div>
+    
   </section>
+
+  <!-- Stats Marquee -->
+  <div class="stats-marquee">
+    <div class="stats-track">
+      <!-- Group 1 -->
+      <div class="stats-group">
+        <template v-for="(item, index) in tm('home.statsMarquee')" :key="'g1-' + index">
+          <div class="stat-item">{{ item }}</div>
+          <img :src="whiteSparkIcon" class="separator-icon" alt="" />
+        </template>
+      </div>
+      <!-- Group 2 (Duplicate) -->
+      <div class="stats-group">
+        <template v-for="(item, index) in tm('home.statsMarquee')" :key="'g2-' + index">
+          <div class="stat-item">{{ item }}</div>
+          <img :src="whiteSparkIcon" class="separator-icon" alt="" />
+        </template>
+      </div>
+    </div>
+  </div>
 </template>
 
-<script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-import videoSrc1 from '@/assets/videos/brofa_background_video.mp4'
-import videoSrc2 from '@/assets/videos/brofa_background_video_2.mp4'
-import videoSrc3 from '@/assets/videos/brofa_background_video_3.mp4'
-
-const sources = [videoSrc1, videoSrc2, videoSrc3]
-
-// Animated stats
-const stat1 = ref(0)
-const stat2 = ref(0)
-const stat3 = ref(0)
-
-function animateValue(targetRef, targetValue, durationMs) {
-  const start = 0
-  const range = targetValue - start
-  const startTime = performance.now()
-  const step = (now) => {
-    const progress = Math.min((now - startTime) / durationMs, 1)
-    targetRef.value = Math.floor(start + range * progress)
-    if (progress < 1) requestAnimationFrame(step)
-  }
-  requestAnimationFrame(step)
-}
-
-const videoA = ref(null)
-const videoB = ref(null)
-const videoC = ref(null)
-const currentIndex = ref(0)
-
-function playIndex(index) {
-  const els = [videoA.value, videoB.value, videoC.value]
-  els.forEach((el, i) => {
-    if (!el) return
-    if (i === index) {
-      try {
-        void el.play()
-      } catch {}
-    } else {
-      el.pause()
-    }
-  })
-  currentIndex.value = index
-}
-
-function handleEnded(i) {
-  const next = (i + 1) % sources.length
-  const els = [videoA.value, videoB.value, videoC.value]
-  const nextEl = els[next]
-  if (nextEl) {
-    nextEl.currentTime = 0
-  }
-  playIndex(next)
-}
-
-onMounted(() => {
-  const a = videoA.value
-  const b = videoB.value
-  const c = videoC.value
-  if (a) a.addEventListener('ended', () => handleEnded(0))
-  if (b) b.addEventListener('ended', () => handleEnded(1))
-  if (c) c.addEventListener('ended', () => handleEnded(2))
-  if (a) void a.play()
-
-  // Kick off stats animations on mount
-  animateValue(stat1, 4, 1200)
-  animateValue(stat2, 50, 1400)
-  animateValue(stat3, 100, 1600)
-})
-
-onBeforeUnmount(() => {
-  const a = videoA.value
-  const b = videoB.value
-  const c = videoC.value
-  if (a) a.removeEventListener('ended', () => handleEnded(0))
-  if (b) b.removeEventListener('ended', () => handleEnded(1))
-  if (c) c.removeEventListener('ended', () => handleEnded(2))
-})
-</script>
-
 <style scoped>
-.hero-wrapper {
-  padding-top: 5.25rem; /* adjusted for taller navbar */
-  margin-bottom: 8rem; /* increased to accommodate floating stats bar */
-}
-
-.hero-surface {
-  position: relative;
-  border-radius: 15px;
-  overflow: hidden;
-  min-height: 660px;
+.hero-section {
+  padding-top: 40px; /* Reduced top padding */
+  padding-bottom: 3rem; /* Added bottom padding */
+  min-height: 100vh;
   display: flex;
-  align-items: stretch;
-}
-
-.hero-video {
-  position: absolute;
-  inset: 0;
+  align-items: center;
+  background-color: var(--background);
+  /* overflow: hidden; Removed to prevent clipping */
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  opacity: 0;
-  transition: opacity 0.8s ease;
+  overflow-x: hidden; /* Prevent horizontal scroll from marquee or other elements */
 }
 
-.hero-video.visible {
-  opacity: 1;
+.hero-container {
+  display: flex;
+  width: 100%;
+  min-height: calc(100vh - 100px); /* Changed from height to min-height */
+  padding-right: 6rem; /* Match left padding for balance */
 }
 
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.25)),
-    linear-gradient(to right, rgba(0,0,0,0.2), rgba(0,0,0,0.0));
-  z-index: 0;
-}
-
-.hero-inner { 
-  position: relative; 
-  z-index: 1; 
-  flex: 1; 
-  padding: clamp(1.5rem,4vw,3rem);
-  margin-left: 0.5rem;
+/* Left Column - 60% */
+.hero-left {
+  flex: 0 0 60%;
+  padding: 1rem 1rem 0rem 6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.hero-copy h1 {
-  font-size: clamp(2.2rem,4.2vw,3.2rem);
-  font-weight: 600;
-  line-height: 1.25;
-  color: #fff;
-  margin: 0 0 1.75rem;
-  letter-spacing: -0.5px;
+.hero-header {
+  margin-bottom: 3rem;
 }
 
-.eyebrow {
-  font-size: .85rem;
-  letter-spacing: .15em;
+.hero-subtitle {
+  color: var(--primary-color);
   text-transform: uppercase;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  font-size: 0.9rem;
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.cta-row { display:flex; gap:3rem; flex-wrap:wrap; }
-
-.cta {
-  display:inline-flex;
-  align-items:center;
-  gap:1.5rem;
-  font-weight:400;
-  padding:.9rem 0;
-  text-decoration:none;
-  background:transparent;
-  color:rgba(255, 255, 255, 0.9);
-  border:none;
-  border-bottom:1px solid rgba(255, 255, 255, 0.6);
-  transition:.35s cubic-bezier(.65,.05,.36,1);
-  font-size:1.15rem;
-  width:fit-content;
-}
-.cta.primary:hover { transform:translateY(-2px); }
-.cta.ghost:hover { transform:translateY(-2px); }
-
-.stats-bar {
-  position: absolute;
-    bottom: 0px;
-    right: 0rem;
-  background:#fff;
-  padding:2rem 2.25rem;
-  border-radius: .75rem 0 0 0;
-  display:flex;
-  gap:2rem;
-  box-shadow:0 18px 40px -12px rgba(0,0,0,.25);
-  align-items:stretch;
-  width: min(820px, calc(100% - 3rem));
-  backdrop-filter: blur(4px);
+.subtitle-icon {
+  width: 20px; /* Adjust size as needed */
+  height: 20px;
+  object-fit: contain;
 }
 
-.stat { flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; }
-.value { font-size:3.2rem; font-weight:800; color:rgba(49, 49, 49, 0.9); line-height:1; margin-bottom:.35rem; }
-.label { font-size:.75rem; text-transform:uppercase; letter-spacing:.08em; font-weight:400; color:var(--text-secondary); line-height:1.3; }
-.divider { width:1px; background:linear-gradient(to bottom, rgba(0,0,0,.08), rgba(0,0,0,.15)); }
-
-/* Fade-in on load for hero texts */
-.hero-copy .eyebrow,
-.hero-copy h1,
-.hero-copy .cta-row {
-  opacity: 0;
-  transform: translateY(12px);
-  animation: heroFadeUp .75s ease-out forwards;
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  color: #542612;
+  font-weight: 900;
+  padding-right: 4rem;
 }
 
-.hero-copy .eyebrow { animation-delay: .05s; }
-.hero-copy h1 { animation-delay: .15s; }
-.hero-copy .cta-row { animation-delay: .28s; }
-
-@keyframes heroFadeUp {
-  to { opacity: 1; transform: translateY(0); }
+.hero-inner-split {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
 }
 
-@media (max-width: 1100px) {
-  .stats-bar { position:static; margin-top:2.5rem; flex-direction:column; gap:1.25rem; width:100%; border-radius: .75rem; }
-  .divider { display:none; }
-  .hero-surface { min-height: 580px; }
-  .hero-wrapper { margin-bottom: var(--space-4xl); }
+/* Inner Left - Button + Info */
+.hero-inner-left-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-@media (max-width: 640px) {
-  .hero-wrapper { padding-top: 6.75rem; }
-  .hero-surface { min-height:520px; }
-  .cta { flex:1 1 100%; justify-content:center; }
-  .stats-bar { padding:1.25rem 1.4rem; }
-  .value { font-size:1.9rem; }
+.hero-actions-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border: 1px solid rgba(135, 43, 5, 0.1);
+  border-radius: 5px;
+  padding: 1.5rem;
+}
+
+.info-divider {
+  height: 1px;
+  background-color: rgba(135, 43, 5, 0.1);
+  width: 100%;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5rem 0.5rem 0.5rem 1.25rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  width: fit-content;
+  transition: background-color var(--transition-fast);
+}
+
+.hero-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-icon {
+  background-color: white;
+  color: var(--primary-color);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+}
+
+.info-icon-circle {
+  width: 48px;
+  height: 48px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.info-item h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.info-item p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Inner Right - Vertical Photos */
+.hero-inner-photos {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+.photo-wrapper {
+  height: 220px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.photo-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+/* Right Column - 40% */
+.hero-right {
+  flex: 0 0 40%;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px; /* Added since it now floats with padding */
+}
+
+/* Responsive - Tablet (768px to 1024px) */
+@media (max-width: 1024px) {
+  .hero-container {
+    flex-direction: column;
+    padding-right: 0;
+    min-height: auto;
+  }
+
+  .hero-left {
+    flex: none;
+    width: 100%;
+    padding: 2rem 3rem;
+    order: 2; /* Text appears second (after image) */
+  }
+
+  .hero-right {
+    flex: none;
+    width: 100%;
+    height: 350px;
+    order: 1; /* Image appears first */
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    padding-right: 0;
+  }
+
+  .hero-inner-split {
+    gap: 2rem;
+  }
+
+  .hero-inner-photos {
+    flex-direction: row;
+  }
+  
+  .photo-wrapper {
+    flex: 1;
+    height: 180px;
+  }
+}
+
+/* Responsive - Mobile (below 768px) */
+@media (max-width: 767px) {
+  .hero-section {
+    padding-top: 20px;
+    padding-bottom: 2rem;
+    min-height: auto;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    padding-right: 0;
+    min-height: auto;
+  }
+
+  .hero-left {
+    flex: none;
+    width: 100%;
+    padding: 1.5rem;
+    order: 2; /* Text appears second (after image) */
+  }
+
+  .hero-right {
+    flex: none;
+    width: 100%;
+    height: 280px;
+    order: 1; /* Image appears first */
+    display: none; /* Hide main hero image in mobile view */
+  }
+
+  .hero-header {
+    margin-bottom: 2rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
+    padding-right: 0;
+    color: #542612;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .hero-inner-split {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .hero-inner-left-col {
+    gap: 1.5rem;
+    margin-left: 0;
+  }
+
+  .hero-actions-info {
+    padding: 1rem;
+    gap: 1rem;
+    border-radius: 4px;
+    margin-left: 0;
+  }
+
+  .info-item p {
+    font-size: 0.95rem;
+  }
+
+  .hero-btn {
+    padding: 0.6rem 0.6rem 0.6rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .btn-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .info-icon-circle {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.stats-marquee {
+  background-color: var(--primary-color);
+  color: white;
+  width: 100%;
+  overflow: hidden; /* Critical for preventing scrollbar */
+  padding: 1.5rem 0;
+  position: relative;
+  z-index: 10;
+}
+
+.stats-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite; /* Left to right movement */
+}
+
+.stats-group {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  padding-right: 6rem; /* Gap between groups */
+}
+
+.stat-item {
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.separator-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@media (max-width: 1024px) {
+  .stats-group {
+    gap: 3rem;
+    padding-right: 3rem;
+  }
+  
+  .stat-item {
+    font-size: 1.25rem;
+  }
 }
 </style>

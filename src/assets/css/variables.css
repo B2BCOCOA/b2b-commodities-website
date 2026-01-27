@@ -4,9 +4,9 @@
 /* CSS Variables for consistent theming */
 :root {
   /* Colors */
-  --primary-color: #22c55e;
-  --primary-dark: #16a34a;
-  --primary-light: #4ade80;
+  --primary-color: #702B0E;
+  --primary-dark: #4a1c09;
+  --primary-light: #9c4d2e;
   --secondary-color: #f59e0b;
   --secondary-dark: #d97706;
   --secondary-light: #fbbf24;
@@ -21,8 +21,8 @@
   --border-color: #e5e7eb;
   
   /* Typography */
-  --font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-secondary: 'Montserrat', sans-serif;
+  --font-primary: 'Geom', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-secondary: 'Geom', sans-serif;
   
   /* Font Sizes */
   --text-xs: 0.75rem;

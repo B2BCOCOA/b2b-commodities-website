@@ -1,67 +1,59 @@
 <template>
   <section class="contact-section" id="contact">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Contact Us</h2>
-        <p class="section-description">Get in touch with us to discuss your agricultural needs and how we can help grow your business.</p>
+    <div class="contact-container-split">
+      <!-- Left: Image Grid -->
+      <div class="contact-images-grid">
+        <div class="img-wrapper"><img :src="img1" alt="Cocoa" class="contact-grid-img" /></div>
+        <div class="img-wrapper"><img :src="img2" alt="Coffee" class="contact-grid-img" /></div>
+        <div class="img-wrapper"><img :src="img3" alt="Walnuts" class="contact-grid-img" /></div>
+        <div class="img-wrapper"><img :src="img4" alt="Green Coffee" class="contact-grid-img" /></div>
+        <div class="img-wrapper"><img :src="img5" alt="Mixed Beans" class="contact-grid-img" /></div>
+        <div class="img-wrapper"><img :src="img6" alt="Dried Fruits" class="contact-grid-img" /></div>
       </div>
 
-      <div class="contact-form-container full-width">
-        <form @submit.prevent="submitForm" class="contact-form" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="firstName" class="form-label">First Name</label>
-              <input id="firstName" name="firstName" type="text" v-model="form.firstName" class="form-input" required />
+      <!-- Right: Form Content -->
+      <div class="contact-form-side">
+        <div class="form-side-content">
+          <div class="section-header-side">
+            <h2 class="section-title">{{ $t('contact.hero.title') }}</h2>
+          </div>
+
+          <form @submit.prevent="submitForm" class="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName" class="form-label">{{ $t('contact.form.firstName') }}</label>
+                <input id="firstName" name="firstName" type="text" v-model="form.firstName" class="form-input" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName" class="form-label">{{ $t('contact.form.lastName') }}</label>
+                <input id="lastName" name="lastName" type="text" v-model="form.lastName" class="form-input" required />
+              </div>
             </div>
-            <div class="form-group">
-              <label for="lastName" class="form-label">Last Name</label>
-              <input id="lastName" name="lastName" type="text" v-model="form.lastName" class="form-input" required />
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email" class="form-label">{{ $t('contact.form.email') }}</label>
+                <input id="email" name="email" type="email" v-model="form.email" class="form-input" required />
+              </div>
+              <div class="form-group">
+                <label for="phone" class="form-label">{{ $t('contact.form.phone') }}</label>
+                <input id="phone" name="phone" type="tel" v-model="form.phone" class="form-input" />
+              </div>
             </div>
-          </div>
 
-          <div class="form-row">
             <div class="form-group">
-              <label for="email" class="form-label">Email</label>
-              <input id="email" name="email" type="email" v-model="form.email" class="form-input" required />
+              <label for="message" class="form-label">{{ $t('contact.form.message') }}</label>
+              <textarea id="message" name="message" v-model="form.message" class="form-textarea" rows="4" :placeholder="$t('contact.form.placeholder')" required></textarea>
             </div>
-            <div class="form-group">
-              <label for="phone" class="form-label">Phone (Optional)</label>
-              <input id="phone" name="phone" type="tel" v-model="form.phone" class="form-input" />
-            </div>
-          </div>
 
-          <div class="form-group">
-            <label for="message" class="form-label">Message</label>
-            <textarea id="message" name="message" v-model="form.message" class="form-textarea" rows="5" placeholder="Tell us about your project or inquiry..." required></textarea>
-          </div>
+            <button type="submit" class="form-button" :disabled="isSubmitting">
+              <span v-if="!isSubmitting">{{ $t('contact.form.submit') }}</span>
+              <span v-else>{{ $t('contact.form.submitting') }}</span>
+            </button>
 
-          <button type="submit" class="form-button" :disabled="isSubmitting">
-            <span v-if="!isSubmitting">Submit Inquiry</span>
-            <span v-else>Submitting...</span>
-          </button>
+            <div v-if="submitMessage" class="submit-message" :class="submitMessageType">{{ submitMessage }}</div>
+          </form>
 
-          <div v-if="submitMessage" class="submit-message" :class="submitMessageType">{{ submitMessage }}</div>
-        </form>
-      </div>
-
-      <div class="contact-info-inline">
-        <div class="info-item">
-          <div class="info-icon" aria-hidden="true">📍</div>
-          <div class="info-content">
-            <p>Tanzania, Dar Es Salaam</p>
-          </div>
-        </div>
-        <div class="info-item">
-          <div class="info-icon" aria-hidden="true">📞</div>
-          <div class="info-content">
-            <p>+255764709216</p>
-          </div>
-        </div>
-        <div class="info-item">
-          <div class="info-icon" aria-hidden="true">✉️</div>
-          <div class="info-content">
-            <p>info@brofainvestment.co.tz</p>
-          </div>
         </div>
       </div>
     </div>
@@ -70,6 +62,15 @@
 
 <script setup>
 import { ref, reactive } from 'vue'
+import { useI18n } from 'vue-i18n'
+import img1 from '@/assets/images/contact-img1.jpg'
+import img2 from '@/assets/images/contact-img2.jpg'
+import img3 from '@/assets/images/contact-img3.jpg'
+import img4 from '@/assets/images/contact-img4.jpg'
+import img5 from '@/assets/images/contact-img5.jpg'
+import img6 from '@/assets/images/contact-img6.jpg'
+
+const { t } = useI18n()
 
 const form = reactive({
   firstName: '',
@@ -99,7 +100,7 @@ const submitForm = async () => {
     })
 
     if (response.ok) {
-      submitMessage.value = 'Thank you! Your message has been sent successfully.'
+      submitMessage.value = t('contact.form.success')
       submitMessageType.value = 'success'
       
       // Reset form
@@ -110,7 +111,7 @@ const submitForm = async () => {
       throw new Error('Failed to submit form')
     }
   } catch (error) {
-    submitMessage.value = 'Sorry, there was an error sending your message. Please try again.'
+    submitMessage.value = t('contact.form.error')
     submitMessageType.value = 'error'
   } finally {
     isSubmitting.value = false
@@ -119,55 +120,114 @@ const submitForm = async () => {
 </script>
 
 <style scoped>
-.contact-section { padding: clamp(3.5rem,7vw,5.5rem) 0 0; background:transparent; }
-.section-header { text-align:center; margin:0 0 2.5rem; }
-.section-title { font-size:clamp(2rem,3.2vw,2.6rem); font-weight:600; color:var(--text-primary); margin:0 0 1.1rem; }
-.section-description { font-size: var(--text-lg); color: var(--text-secondary); max-width:760px; margin:0 auto; }
+.contact-section { padding: 0; background: #fff; overflow: hidden; }
 
-/* Full width form container (no background, no shadow, no overlay) */
-.contact-form-container.full-width { width:100%; max-width:100%; margin:0 auto 2.4rem; padding:2.6rem 1.5rem 2.9rem; border-radius:0; background:transparent; box-shadow:none; position:relative; }
-.contact-form-container.full-width:before { display:none; }
-.contact-form { width:100%; position:relative; z-index:1; }
-.form-row { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem 1.4rem; }
-.form-group { margin:0 0 1.55rem; position:relative; }
-.form-label { display:block; font-size:.7rem; font-weight:600; text-transform:uppercase; letter-spacing:.12em; color:var(--text-secondary); margin:0 0 .15rem .05rem; }
-.form-input,.form-textarea,.form-select { width:100%; padding:.85rem .25rem .65rem; border:none; border-bottom:2px solid var(--border-color); background:transparent; font-size:.95rem; font-family:inherit; transition:.25s; border-radius:0; }
-/* Removed all drop shadows */
-.form-input:focus,.form-textarea:focus { outline:none; border-color:var(--primary-color); box-shadow:none; }
-.form-select:focus { outline:none; border-color:var(--primary-color); box-shadow:none; }
-.form-textarea { resize:vertical; min-height:140px; line-height:1.45; }
-.checkbox-label { display:flex; align-items:center; gap:.55rem; font-size:.8rem; color:var(--text-secondary); cursor:pointer; user-select:none; }
-.form-checkbox { width:16px; height:16px; accent-color:var(--primary-color); }
-.form-button { width:100%; margin-top:.35rem; padding:1rem 1.25rem; background:var(--primary-color); color:#fff; border:none; border-radius:.35rem; font-size:1rem; font-weight:600; cursor:pointer; transition:.25s; font-family:inherit; letter-spacing:.4px; box-shadow:none; }
-.form-button:hover:not(:disabled) { background:var(--primary-dark); transform:translateY(-2px); box-shadow:none; }
-.form-button:disabled { opacity:.55; cursor:not-allowed; }
-.submit-message { margin-top:1.1rem; padding:.85rem 1rem; border-radius:.75rem; text-align:center; font-weight:500; font-size:.9rem; }
-.submit-message.success { background:#d1fae5; color:#065f46; border:1px solid #a7f3d0; }
-.submit-message.error { background:#fee2e2; color:#991b1b; border:1px solid #fecaca; }
+.contact-container-split {
+  display: flex;
+  width: 100%;
+  min-height: auto;
+}
 
-/* Inline contact info below form */
-.contact-info-inline { display:flex; flex-wrap:wrap; gap:2.2rem 3.5rem; width:100vw; margin-left:calc(-50vw + 50%); justify-content:center; align-items:center; background:#EEF5EA; padding:2rem; border-radius:0; }
-.contact-info-inline .info-item { display:flex; align-items:center; gap:1.1rem; }
-.contact-info-inline .info-icon { font-size:1.4rem; width:44px; height:44px; background:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--primary-color); box-shadow:none; }
-.contact-info-inline .info-content h3 { font-size:1.05rem; font-weight:600; color:var(--text-primary); margin:0 0 .35rem; letter-spacing:.5px; }
-.contact-info-inline .info-content p { color:var(--text-secondary); font-size:.95rem; margin:0; line-height:1.3; }
+/* Left side: Images */
+.contact-images-grid {
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 270px);
+  gap: 0;
+}
 
-/* Make this section fluid so the form can span wider */
-.contact-section > .container { max-width:100%; width:100%; padding-left:clamp(1rem,4vw,4rem); padding-right:clamp(1rem,4vw,4rem); }
-/* Remove internal max-width cap so form uses full fluid width */
-.contact-form-container.full-width { width:100%; max-width:100%; margin:0 auto 2.4rem; padding:2.6rem 1.5rem 2.9rem; }
-@media (min-width:1400px){
-  .contact-form-container.full-width { padding-left:2rem; padding-right:2rem; }
+.img-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
-@media (min-width:1100px){
-  /* stretch inputs horizontally by increasing font-size a bit and reducing internal side padding removal to allow apparent width */
-  .form-input,.form-textarea { font-size:1rem; }
-  .contact-form-container.full-width { padding-left:1.5rem; padding-right:1.5rem; }
+
+.contact-grid-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
 }
-@media (min-width:1500px){
-  .contact-form-container.full-width { max-width:1800px; }
+
+.img-wrapper:hover .contact-grid-img {
+  transform: scale(1.08);
 }
-@media (max-width:960px) { .contact-form-container.full-width { padding:2.2rem 1.6rem 2.5rem; } }
-@media (max-width:720px) { .form-row { grid-template-columns:1fr; gap:1.1rem; } .contact-info-inline { flex-direction:column; gap:1.9rem; } }
-@media (max-width:520px) { .contact-form-container.full-width { padding:1.85rem 1rem 2.1rem; } .section-title { font-size:2.15rem; } }
+
+/* Right side: Form */
+.contact-form-side {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 6rem;
+  background-color: #ffffff;
+}
+
+.form-side-content {
+  max-width: 550px;
+  width: 100%;
+}
+
+.section-header-side {
+  margin-bottom: 2.5rem;
+}
+
+.section-title { 
+  font-size: 2.5rem; 
+  font-weight: 700; 
+  color: #313131; 
+  text-align: center;
+}
+
+.section-description { 
+  font-size: 1.1rem; 
+  color: #31313180; 
+  line-height: 1.5; 
+}
+
+.contact-form { width:100%; box-shadow: none; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+.form-group { margin-bottom: 1.5rem; }
+.form-label { display:block; font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color: #313131; margin-bottom: 0.5rem; }
+.form-input,.form-textarea { width:100%; padding: 0.8rem 0; border:none; border-bottom:1px solid #e0e0e0; background:transparent; font-size:1rem; transition:.25s; }
+.form-input:focus,.form-textarea:focus { outline:none; border-color:var(--primary-color); }
+.form-textarea { resize:vertical; min-height:100px; }
+
+.form-button { width:100%; margin-top: 1rem; padding:1.1rem; background:#702B0E; color:#fff; border:none; border-radius:4px; font-size:1rem; font-weight:600; cursor:pointer; transition:.3s; }
+.form-button:hover:not(:disabled) { background:#542612; transform:translateY(-2px); }
+.form-button:disabled { opacity:.5; }
+
+.submit-message { margin-top:1rem; padding:1rem; border-radius:4px; text-align:center; font-size:.9rem; }
+.submit-message.success { background:#f0fdf4; color:#166534; }
+.submit-message.error { background:#fef2f2; color:#991b1b; }
+
+.contact-details-minimal {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-details-minimal p {
+  font-size: 0.95rem;
+  color: #31313190;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .contact-container-split { flex-direction: column-reverse; }
+  .contact-images-grid, .contact-form-side { width: 100%; }
+  .contact-form-side { padding: 4rem 2rem; }
+  .contact-images-grid { height: 600px; }
+}
+
+@media (max-width: 640px) {
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+  .contact-images-grid { height: 450px; }
+}
 </style>
