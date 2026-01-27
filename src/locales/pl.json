@@ -33,7 +33,13 @@
     ],
     "badgeOne": "Napędzani ekspertyzą rynkową, <br/>kierowani zaufaniem",
     "badgeTwo": "Zaangażowani w odpowiedzialny i <br/>zgodny handel",
-    "checkServices": "Sprawdź nasze usługi"
+    "checkProducts": "Sprawdź nasze produkty",
+    "imageOverlays": [
+      "Jakość Premium",
+      "Zrównoważone Pozyskiwanie",
+      "Globalna Sieć",
+      "Handel Ekspercki"
+    ]
   },
   "products": {
     "hero": {
@@ -107,7 +113,7 @@
   "footer": {
     "tagline": {
       "first": "Zbudowani na doświadczeniu, silnych partnerstwach,",
-      "second": "i wydajnych globalnych łańcuchach dostaw"
+      "second": " i wydajnych globalnych łańcuchach dostaw"
     },
     "point1": "Ponad 20 lat doświadczenia",
     "point2": "Skupieni na jakości, zgodności i przejrzystości",

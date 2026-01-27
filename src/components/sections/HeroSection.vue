@@ -25,7 +25,7 @@ const { tm } = useI18n()
         <div class="hero-inner-split">
           <!-- Inner Left: Button and Texts -->
           <div class="hero-inner-left-col">
-            <a href="#contact" class="hero-btn">
+            <a href="#about-us" class="hero-btn">
               <span>{{ $t('home.learnMore') }}</span>
               <div class="btn-icon">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">

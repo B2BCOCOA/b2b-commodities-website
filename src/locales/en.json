@@ -33,7 +33,13 @@
     ],
     "badgeOne": "Driven by Market Expertise, <br/>Guided by Trust",
     "badgeTwo": "Committed to Responsible & <br/>Compliant Trade",
-    "checkServices": "Check Our Services"
+    "checkProducts": "Check Our Products",
+    "imageOverlays": [
+      "Premium Quality",
+      "Sustainable Sourcing",
+      "Global Network",
+      "Expert Trading"
+    ]
   },
   "products": {
     "hero": {
@@ -107,7 +113,7 @@
   "footer": {
     "tagline": {
       "first": "Built on experience, strong partnerships,",
-      "second": "and efficient global supply chains"
+      "second": " and efficient global supply chains"
     },
     "point1": "Experienced for more than 20 years",
     "point2": "Focused on quality, compliance, and transparency",

@@ -25,7 +25,7 @@
               {{ $t('founder.profile.bio') }}
             </p>
 
-            <a href="#" class="linkedin-btn">
+            <a href="https://www.linkedin.com/in/grzegorz-p-winiarek-b2b-commodities-869992266/" class="linkedin-btn" target="_blank" rel="noopener noreferrer">
               <span>{{ $t('founder.profile.linkedin') }}</span>
               <div class="linkedin-box">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">

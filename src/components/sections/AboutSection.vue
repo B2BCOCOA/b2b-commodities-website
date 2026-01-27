@@ -1,10 +1,10 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
-// Placeholder images - replace with actual commodity images
-import img1 from '@/assets/images/hero-section-pic-1.jpg'
-import img2 from '@/assets/images/hero-section-pic-2.jpg'
-import img3 from '@/assets/images/hero-section-pic-3.jpg'
-import img4 from '@/assets/images/hero_section_background.jpg'
+// Actual about section images
+import img1 from '@/assets/images/home-about-section-pic1.jpg'
+import img2 from '@/assets/images/home-about-section-pic2.jpg'
+import img3 from '@/assets/images/home-about-section-pic3.jpg'
+import img4 from '@/assets/images/home-about-section-pic4.jpg'
 import bgImage from '@/assets/images/home-about-section-background.jpg'
 import sparkIcon from '@/assets/images/iconoir_spark-solid-brown.png'
 
@@ -12,22 +12,34 @@ const { tm } = useI18n()
 </script>
 
 <template>
-  <section class="about-section">
+  <section id="about-us" class="about-section">
     <div class="about-container">
       <!-- Left: Image Grid -->
       <div class="about-images">
         <div class="image-grid">
           <div class="grid-item">
             <img :src="img1" alt="Cocoa" />
+            <div class="image-overlay overlay-1">
+              <span>{{ tm('about.imageOverlays')[0] }}</span>
+            </div>
           </div>
           <div class="grid-item">
             <img :src="img2" alt="Soybeans" />
+            <div class="image-overlay overlay-2">
+              <span>{{ tm('about.imageOverlays')[1] }}</span>
+            </div>
           </div>
           <div class="grid-item">
             <img :src="img3" alt="Cotton" />
+            <div class="image-overlay overlay-3">
+              <span>{{ tm('about.imageOverlays')[2] }}</span>
+            </div>
           </div>
           <div class="grid-item">
             <img :src="img4" alt="Coffee" />
+            <div class="image-overlay overlay-4">
+              <span>{{ tm('about.imageOverlays')[3] }}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -78,14 +90,14 @@ const { tm } = useI18n()
           </div>
         </div>
 
-        <a href="#services" class="cta-button">
-          <span>{{ $t('about.checkServices') }}</span>
+        <router-link to="/products" class="cta-button">
+          <span>{{ $t('about.checkProducts') }}</span>
           <div class="btn-icon">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
               <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-        </a>
+        </router-link>
       </div>
     </div>
   </section>
@@ -134,17 +146,55 @@ const { tm } = useI18n()
   aspect-ratio: 1;
   overflow: hidden;
   border-radius: 5px;
+  position: relative;
 }
 
 .grid-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.4s ease, backdrop-filter 0.4s ease;
+  z-index: 2;
+  backdrop-filter: blur(2px);
+}
+
+.overlay-1 { background-color: rgba(112, 43, 14, 0.88); } /* Deep Brown */
+.overlay-2 { background-color: #cec68e88; }  /* Forest Green */
+.overlay-3 { background-color: rgba(245, 204, 138, 0.88); } /* Muted Gold */
+.overlay-4 { background-color: rgba(69, 30, 14, 0.88); }  /* Dark Cocoa */
+
+.image-overlay span {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transform: translateY(10px);
+  transition: transform 0.4s ease;
 }
 
 .grid-item:hover img {
-  transform: scale(1.05);
+  transform: scale(1.1);
+}
+
+.grid-item:hover .image-overlay {
+  opacity: 1;
+}
+
+.grid-item:hover .image-overlay span {
+  transform: translateY(0);
 }
 
 /* Right: Content */

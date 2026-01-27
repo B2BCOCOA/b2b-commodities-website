@@ -33,7 +33,13 @@
     ],
     "badgeOne": "Angetrieben von Marktkenntnis, <br/>geleitet von Vertrauen",
     "badgeTwo": "Verpflichtet zu verantwortungsvollem <br/>und konformem Handel",
-    "checkServices": "Unsere Dienstleistungen prüfen"
+    "checkProducts": "Unsere Produkte prüfen",
+    "imageOverlays": [
+      "Premium Qualität",
+      "Nachhaltiges Sourcing",
+      "Globales Netzwerk",
+      "Expertenhandel"
+    ]
   },
   "products": {
     "hero": {
@@ -107,7 +113,7 @@
   "footer": {
     "tagline": {
       "first": "Aufgebaut auf Erfahrung, starken Partnerschaften,",
-      "second": "und effizienten globalen Lieferketten"
+      "second": " und effizienten globalen Lieferketten"
     },
     "point1": "Über 20 Jahre Erfahrung",
     "point2": "Fokus auf Qualität, Compliance und Transparenz",

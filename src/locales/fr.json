@@ -33,7 +33,13 @@
     ],
     "badgeOne": "Animés par l'expertise du marché, <br/>guidés par la confiance",
     "badgeTwo": "Engagés dans un commerce responsable <br/>et conforme",
-    "checkServices": "Consulter nos services"
+    "checkProducts": "Découvrez nos produits",
+    "imageOverlays": [
+      "Qualité Premium",
+      "Approvisionnement Durable",
+      "Réseau Mondial",
+      "Expertise Commerciale"
+    ]
   },
   "products": {
     "hero": {
@@ -107,7 +113,7 @@
   "footer": {
     "tagline": {
       "first": "Bâti sur l'expérience, des partenariats solides,",
-      "second": "et des chaînes d'approvisionnement mondiales efficaces"
+      "second": " et des chaînes d'approvisionnement mondiales efficaces"
     },
     "point1": "Plus de 20 ans d'expérience",
     "point2": "Axé sur la qualité, la conformité et la transparence",
