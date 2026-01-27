@@ -7,7 +7,6 @@
 
 <script setup>
 import AboutSection from '@/components/sections/AboutSection.vue'
-import TeamSection from '@/components/sections/TeamSection.vue'
 </script>
 
 <style scoped>
