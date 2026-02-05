@@ -11,9 +11,9 @@ import img5 from '@/assets/images/products5.jpg'
 import img6 from '@/assets/images/products6.jpg'
 
 // New images for rotation
-import newImg1 from '@/assets/images/productsimages1.jpeg'
-import newImg2 from '@/assets/images/productsimages2.jpeg'
-import newImg3 from '@/assets/images/productsimages3.jpeg'
+import newImg1 from '@/assets/images/productsimages1.jpg'
+import newImg2 from '@/assets/images/productsimages2.jpg'
+import newImg3 from '@/assets/images/productsimages3.jpg'
 import newImg4 from '@/assets/images/productsimages4.jpg'
 import newImg5 from '@/assets/images/productsimages5.jpg'
 import newImg6 from '@/assets/images/productsimages6.jpg'
