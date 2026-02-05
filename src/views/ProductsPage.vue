@@ -1,5 +1,7 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
+import { ref, onMounted, onUnmounted } from 'vue'
+
 // Placeholder images - replace with actual product images
 import img1 from '@/assets/images/hero-section-pic-2.jpg'
 import img2 from '@/assets/images/hero-section-pic-3.jpg'
@@ -7,9 +9,87 @@ import img3 from '@/assets/images/products3.jpg'
 import img4 from '@/assets/images/products4.jpg'
 import img5 from '@/assets/images/products5.jpg'
 import img6 from '@/assets/images/products6.jpg'
+
+// New images for rotation
+import newImg1 from '@/assets/images/productsimages1.jpeg'
+import newImg2 from '@/assets/images/productsimages2.jpeg'
+import newImg3 from '@/assets/images/productsimages3.jpeg'
+import newImg4 from '@/assets/images/productsimages4.jpg'
+import newImg5 from '@/assets/images/productsimages5.jpg'
+import newImg6 from '@/assets/images/productsimages6.jpg'
+
 import whiteSparkIcon from '@/assets/images/iconoir_spark-solid-white.png'
 
 const { tm } = useI18n()
+
+// Image Sets
+const imageSet1 = [img1, newImg1]
+const imageSet2 = [img2, newImg2]
+const imageSet3 = [img3, newImg3]
+const imageSet4 = [img4, newImg4]
+const imageSet5 = [img5, newImg5]
+const imageSet6 = [img6, newImg6]
+
+// Current index for rotation
+const currentImageIndex = ref(0)
+let rotationInterval
+
+// Track overlay images and their fade state
+const overlayImages = ref({
+  img1: null,
+  img2: null,
+  img3: null,
+  img4: null,
+  img5: null,
+  img6: null,
+  visible: false
+})
+
+const currentImages = ref({
+  img1: imageSet1[0],
+  img2: imageSet2[0],
+  img3: imageSet3[0],
+  img4: imageSet4[0],
+  img5: imageSet5[0],
+  img6: imageSet6[0]
+})
+
+const rotateImages = () => {
+  // Prepare next images
+  const nextIndex = (currentImageIndex.value + 1) % 2
+  overlayImages.value = {
+    img1: imageSet1[nextIndex],
+    img2: imageSet2[nextIndex],
+    img3: imageSet3[nextIndex],
+    img4: imageSet4[nextIndex],
+    img5: imageSet5[nextIndex],
+    img6: imageSet6[nextIndex],
+    visible: true
+  }
+  // After fade duration, update base images and hide overlay
+  setTimeout(() => {
+    currentImageIndex.value = nextIndex
+    currentImages.value = {
+      img1: imageSet1[nextIndex],
+      img2: imageSet2[nextIndex],
+      img3: imageSet3[nextIndex],
+      img4: imageSet4[nextIndex],
+      img5: imageSet5[nextIndex],
+      img6: imageSet6[nextIndex]
+    }
+    overlayImages.value.visible = false
+  }, 1200)
+}
+
+onMounted(() => {
+  rotationInterval = setInterval(rotateImages, 7000)
+})
+
+onUnmounted(() => {
+  if (rotationInterval) {
+    clearInterval(rotationInterval)
+  }
+})
 </script>
 
 <template>
@@ -18,7 +98,11 @@ const { tm } = useI18n()
     <section class="products-hero">
       <div class="hero-content">
         <h1>{{ $t('products.hero.title') }}</h1>
-        <p>{{ $t('products.hero.subtitle') }}</p>
+        <ul class="product-list">
+          <li v-for="(product, index) in tm('products.hero.subtitle')" :key="index">
+            {{ product }}
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -30,8 +114,14 @@ const { tm } = useI18n()
           <p>{{ $t('products.section1.description') }}</p>
         </div>
         <div class="image-grid">
-          <div class="grid-image-wrapper"><img :src="img1" alt="Cocoa beans" class="grid-image" /></div>
-          <div class="grid-image-wrapper"><img :src="img2" alt="Coffee beans in hands" class="grid-image" /></div>
+          <div class="grid-image-wrapper">
+            <img :src="currentImages.img1" alt="Cocoa beans" class="grid-image base-image" />
+            <img v-if="overlayImages.visible" :src="overlayImages.img1" class="grid-image overlay-image fade-in" alt="Cocoa beans next" />
+          </div>
+          <div class="grid-image-wrapper">
+            <img :src="currentImages.img2" alt="Coffee beans in hands" class="grid-image base-image" />
+            <img v-if="overlayImages.visible" :src="overlayImages.img2" class="grid-image overlay-image fade-in" alt="Coffee beans next" />
+          </div>
         </div>
       </div>
     </section>
@@ -44,8 +134,14 @@ const { tm } = useI18n()
           <p>{{ $t('products.section2.description') }}</p>
         </div>
         <div class="image-grid">
-          <div class="grid-image-wrapper"><img :src="img3" alt="Walnuts" class="grid-image" /></div>
-          <div class="grid-image-wrapper"><img :src="img4" alt="Green coffee beans" class="grid-image" /></div>
+          <div class="grid-image-wrapper">
+            <img :src="currentImages.img3" alt="Walnuts" class="grid-image base-image" />
+            <img v-if="overlayImages.visible" :src="overlayImages.img3" class="grid-image overlay-image fade-in" alt="Walnuts next" />
+          </div>
+          <div class="grid-image-wrapper">
+            <img :src="currentImages.img4" alt="Green coffee beans" class="grid-image base-image" />
+            <img v-if="overlayImages.visible" :src="overlayImages.img4" class="grid-image overlay-image fade-in" alt="Green coffee next" />
+          </div>
         </div>
       </div>
     </section>
@@ -58,8 +154,14 @@ const { tm } = useI18n()
           <p>{{ $t('products.section3.description') }}</p>
         </div>
         <div class="image-grid">
-          <div class="grid-image-wrapper"><img :src="img5" alt="Mixed beans" class="grid-image" /></div>
-          <div class="grid-image-wrapper"><img :src="img6" alt="Dried fruits and spices" class="grid-image" /></div>
+          <div class="grid-image-wrapper">
+            <img :src="currentImages.img5" alt="Mixed beans" class="grid-image base-image" />
+            <img v-if="overlayImages.visible" :src="overlayImages.img5" class="grid-image overlay-image fade-in" alt="Mixed beans next" />
+          </div>
+          <div class="grid-image-wrapper">
+            <img :src="currentImages.img6" alt="Dried fruits and spices" class="grid-image base-image" />
+            <img v-if="overlayImages.visible" :src="overlayImages.img6" class="grid-image overlay-image fade-in" alt="Dried fruits next" />
+          </div>
         </div>
       </div>
     </section>
@@ -94,9 +196,9 @@ const { tm } = useI18n()
 /* Hero Section */
 .products-hero {
   background-color: #8B4513;
-  background-image: linear-gradient(rgba(139, 69, 19, 0.9), rgba(139, 69, 19, 0.85)), url('@/assets/images/home-about-section-background.jpg');
+  background-image: linear-gradient(rgba(139, 69, 19, 0.9), rgba(139, 69, 19, 0.85)), url('@/assets/images/containerspage.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   padding: 6rem 6rem;
   color: white;
 }
@@ -111,6 +213,24 @@ const { tm } = useI18n()
   margin-bottom: 1.5rem;
   line-height: 1.2;
   color: #ffffff;
+}
+
+.product-list {
+  list-style: disc;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.3rem 0.6rem;
+  padding-left: 0;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  opacity: 0.9;
+  font-weight: 300;
+  color: #ffffff;
+}
+
+.product-list li {
+  margin-bottom: 0;
+  margin-left: 1.5rem;
 }
 
 .hero-content p {
@@ -175,6 +295,7 @@ const { tm } = useI18n()
   width: 100%;
   height: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 .grid-image {
@@ -183,6 +304,22 @@ const { tm } = useI18n()
   object-fit: cover;
   border-radius: 0;
   transition: transform 0.5s ease;
+  position: absolute;
+  inset: 0;
+}
+
+.grid-image.base-image {
+  z-index: 1;
+}
+
+.grid-image.overlay-image {
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.grid-image.overlay-image.fade-in {
+  opacity: 1;
 }
 
 .grid-image-wrapper:hover .grid-image {
@@ -315,6 +452,11 @@ const { tm } = useI18n()
   .separator-icon {
     width: 18px;
     height: 18px;
+  }
+  
+  .product-list {
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 1rem;
   }
 }
 

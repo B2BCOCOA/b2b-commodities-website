@@ -10,7 +10,7 @@
   "home": {
     "welcome": "Witamy w B2B Commodities",
     "subtitle": "Towary premium dla handlu światowego",
-    "title": "Kakao, kawa, olej z awokado, bawełna i więcej..",
+    "title": "Ziarna Kakao, Produkty Kakaowe, Czekolada, Kawa, Bawełna, Orzeszki Ziemne, Orzechy Nerkowca, Sezam i więcej..",
     "learnMore": "Dowiedz się więcej o nas",
     "globalReach": "Wysokiej jakości towary pozyskiwane z Afryki i Europy.",
     "reliableDelivery": "Niezawodna dostawa i gwarancja jakości dla każdej przesyłki.",
@@ -24,7 +24,7 @@
   "about": {
     "title": "O NAS",
     "heading": "Towary premium od źródła na rynki światowe",
-    "description": "Jesteśmy czymś więcej niż firmą handlową.. Jesteśmy zaufanym ogniwem między producentami a nabywcami. Współpracujemy ściśle z partnerami w całej Afryce i Europie aby pozyskiwać towary najwyższej jakości i dostarczać je niezawodnie na rynki międzynarodowe.",
+    "description": "Jesteśmy czymś więcej niż firmą handlową. Jesteśmy zaufanym ogniwem między producentami a nabywcami, zaangażowani w uczciwość i partnerstwo. Współpracujemy ściśle z partnerami w całej Afryce i Europie aby pozyskiwać towary najwyższej jakości i dostarczać je niezawodnie na rynki międzynarodowe. Nasza głęboka ekspertyza i zaangażowanie budują zaufanie, które przekształca transakcje w trwałe relacje.",
     "missionTitle": "Nasza misja:",
     "missionItems": [
       "Zapewnienie spójnej jakości i przejrzystego pozyskiwania",
@@ -44,7 +44,19 @@
   "products": {
     "hero": {
       "title": "Produkty, którymi handlujemy",
-      "subtitle": "Produkty kakaowe, kawa zielona, pochodne soi, nerkowce i sezam, orzeszki ziemne, egzotyczne owoce suszone, bawełna surowa i inne towary tropikalne."
+      "subtitle": [
+        "Ziarna Kakao",
+        "Masa Kakaowa",
+        "Masło Kakaowe & Proszki",
+        "Czekolada",
+        "Bawełna Surowa",
+        "Łupy Bawełny & Włókna",
+        "Orzeszki Ziemne",
+        "Nerkowce & Jądra",
+        "Sezam Biały & Czarny",
+        "Owoce Suszone",
+        "Inne Towary Tropikalne"
+      ]
     },
     "section1": {
       "title": "Globalne pozyskiwanie towarów",
@@ -71,7 +83,8 @@
     "card2": {
       "title": "Jakość, zgodność i przejrzystość",
       "description": "Nasza współpraca z globalnymi partnerami logistycznymi i inspekcyjnymi gwarantuje, że produkty spełniają międzynarodowe standardy i docierają zgodnie ze specyfikacją."
-    }
+    },
+    "logosTitle": "Partnerzy naszej grupy kapitałowej"
   },
   "founder": {
     "hero": {
@@ -84,7 +97,7 @@
       "bio": "Grzegorz Winiarek jest ekonomistą i ekspertem w dziedzinie towarów międzynarodowych z ponad 20-letnim doświadczeniem w handlu kakao, kawą, bawełną, orzechami, nabiałem, mięsem i innymi produktami masowymi. Jako współzałożyciel B2B Commodities łączy dostawców z Afryki, Azji i Ameryki Łacińskiej z rynkami w Europie i Polsce, tworząc globalne możliwości handlowe.",
       "linkedin": "Odwiedź jego LinkedIn",
       "extra": "Poza biznesem pasjonuje się sportem i muzyką świata.",
-      "tracksTitle": "Niektóre z jego ulubionych utworów to:"
+      "tracksTitle": "Możesz posłuchać niektórych z jego ulubionych utworów korzystając z poniższych linków:"
     }
   },
   "contact": {

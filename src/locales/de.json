@@ -10,7 +10,7 @@
   "home": {
     "welcome": "Willkommen bei B2B Commodities",
     "subtitle": "Premium-Rohstoffe für den globalen Handel",
-    "title": "Kakao, Kaffee, Avocadoöl, Baumwolle und mehr..",
+    "title": "Kakaobohnen, Kakaoerzeugnisse, Schokolade, Kaffee, Baumwolle, Erdnüsse, Cashewnüsse, Sesam und mehr..",
     "learnMore": "Mehr über uns erfahren",
     "globalReach": "Hochwertige Rohstoffe aus Afrika und Europa.",
     "reliableDelivery": "Zuverlässige Lieferung und Qualitätssicherung für jede Sendung.",
@@ -24,7 +24,7 @@
   "about": {
     "title": "ÜBER UNS",
     "heading": "Premium-Rohstoffe vom Erzeuger zu globalen Märkten",
-    "description": "Wir sind mehr als eine Handelsgesellschaft.. Wir sind ein vertrauenswürdiges Bindeglied zwischen Erzeugern und Käufern. Wir arbeiten eng mit Partnern in Afrika und Europa zusammen, um hochwertige Rohstoffe zu beschaffen und sie zuverlässig auf internationale Märkte zu liefern.",
+    "description": "Wir sind mehr als eine Handelsgesellschaft. Wir sind ein vertrauenswürdiges Bindeglied zwischen Erzeugern und Käufern, das sich der Integrität und Partnerschaft verschrieben hat. Wir arbeiten eng mit Partnern in Afrika und Europa zusammen, um hochwertige Rohstoffe zu beschaffen und sie zuverlässig auf internationale Märkte zu liefern. Unser tiefes Fachwissen und unser Engagement schaffen das Vertrauen, das Transaktionen in dauerhafte Beziehungen umwandelt.",
     "missionTitle": "Unsere Mission:",
     "missionItems": [
       "Konsistente Qualität und transparente Beschaffung gewährleisten",
@@ -44,7 +44,19 @@
   "products": {
     "hero": {
       "title": "Die Produkte, mit denen wir handeln",
-      "subtitle": "Kakaoprodukte, Rohkaffee, Sojaderivate, Cashew und Sesam, Erdnüsse, exotische Trockenfrüchte, Rohbaumwolle und andere tropische Rohstoffe."
+      "subtitle": [
+        "Kakaobohnen",
+        "Kakaomasse",
+        "Kakaobutter & Pulver",
+        "Schokolade",
+        "Rohbaumwolle",
+        "Baumwollabfälle & Fasern",
+        "Erdnüsse",
+        "Cashewnüsse & Kerne",
+        "Sesam Weiß & Schwarz",
+        "Trockenfrüchte",
+        "Andere tropische Rohstoffe"
+      ]
     },
     "section1": {
       "title": "Globales Rohstoff-Sourcing",
@@ -71,7 +83,8 @@
     "card2": {
       "title": "Qualität, Compliance & Transparenz",
       "description": "Unsere Zusammenarbeit mit globalen Logistik- und Inspektionspartnern stellt sicher, dass die Produkte internationale Standards erfüllen und wie spezifiziert ankommen."
-    }
+    },
+    "logosTitle": "Partner unserer Unternehmensgruppe"
   },
   "founder": {
     "hero": {
@@ -84,7 +97,7 @@
       "bio": "Grzegorz Winiarek ist Ökonom und internationaler Rohstoffexperte mit über 20 Jahren Erfahrung im Handel mit Kakao, Kaffee, Baumwolle, Nüssen, Milchprodukten, Fleisch und anderen Schüttgütern. Als Mitbegründer von B2B Commodities verbindet er Lieferanten aus Afrika, Asien und Lateinamerika mit Märkten in Europa und Polen und schafft so globale Handelsmöglichkeiten.",
       "linkedin": "Besuchen Sie sein LinkedIn",
       "extra": "Abseits des Geschäftslebens begeistert er sich für Sport und Weltmusik.",
-      "tracksTitle": "Einige seiner Lieblingstracks sind:"
+      "tracksTitle": "Sie können einige seiner Lieblingstracks über die untenstehenden Links anhören:"
     }
   },
   "contact": {

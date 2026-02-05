@@ -37,6 +37,64 @@
             <div class="founder-extra">
               <p>{{ $t('founder.profile.extra') }}</p>
               <p class="tracks-invite">{{ $t('founder.profile.tracksTitle') }}</p>
+              
+              <div class="music-cards-grid">
+                <a href="https://www.youtube.com/watch?v=bwB9EMpW8eY" target="_blank" rel="noopener noreferrer" class="music-card">
+                  <div class="music-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M9 18V5l12-2v13"></path>
+                      <circle cx="6" cy="18" r="3"></circle>
+                      <circle cx="18" cy="16" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div class="music-info">
+                    <span class="card-song-title">Stand By You</span>
+                    <span class="card-singer-name">Rachel Platten</span>
+                  </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=YcUOgL9fmX8&pp=ygUZc2VtcmUgc2VtcmUga2VyZmFsYSBrYW50ZQ%3D%3D" target="_blank" rel="noopener noreferrer" class="music-card">
+                  <div class="music-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M9 18V5l12-2v13"></path>
+                      <circle cx="6" cy="18" r="3"></circle>
+                      <circle cx="18" cy="16" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div class="music-info">
+                    <span class="card-song-title">Semere semere</span>
+                    <span class="card-singer-name">Kerfala Kanté</span>
+                  </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=ZSRFY3UjVVA&pp=ygUSQXNocyBUaGUgQmVzdCBtYWFt" target="_blank" rel="noopener noreferrer" class="music-card">
+                  <div class="music-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M9 18V5l12-2v13"></path>
+                      <circle cx="6" cy="18" r="3"></circle>
+                      <circle cx="18" cy="16" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div class="music-info">
+                    <span class="card-song-title">Maam</span>
+                    <span class="card-singer-name">Ashs The Best</span>
+                  </div>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=rrwvr5DlEUM&pp=ygURc21pbGUgZm9yIG1lIHNpbWk%3D" target="_blank" rel="noopener noreferrer" class="music-card">
+                  <div class="music-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M9 18V5l12-2v13"></path>
+                      <circle cx="6" cy="18" r="3"></circle>
+                      <circle cx="18" cy="16" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div class="music-info">
+                    <span class="card-song-title">Smile For Me</span>
+                    <span class="card-singer-name">Simi</span>
+                  </div>
+                </a>
+              </div>
             </div>
 
 
@@ -130,9 +188,9 @@ import musicNoteIcon from '@/assets/images/music-note.png'
 /* Hero Section */
 .founder-hero {
   background-color: #8B4513;
-  background-image: linear-gradient(rgba(139, 69, 19, 0.9), rgba(139, 69, 19, 0.85)), url('@/assets/images/home-about-section-background.jpg');
+  background-image: linear-gradient(rgba(139, 69, 19, 0.9), rgba(139, 69, 19, 0.85)), url('@/assets/images/containerspage.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   padding: 6rem 6rem;
   color: white;
 }
@@ -185,7 +243,8 @@ import musicNoteIcon from '@/assets/images/music-note.png'
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.2rem;
 }
 
 .spark-icon {
@@ -379,6 +438,13 @@ import musicNoteIcon from '@/assets/images/music-note.png'
   100% { transform: translateX(0); }
 }
 
+/* Responsive */
+@media (max-width: 1200px) {
+  .founder-title {
+    font-size: 2.8rem;
+  }
+}
+
 /* Responsive - Tablet (1024px and below) */
 @media (max-width: 1024px) {
   .profile-grid {
@@ -441,6 +507,7 @@ import musicNoteIcon from '@/assets/images/music-note.png'
     font-size: 1.1rem;
   }
   
+  
   .stats-group {
     gap: 3rem;
     padding-right: 3rem;
@@ -448,6 +515,73 @@ import musicNoteIcon from '@/assets/images/music-note.png'
   
   .stat-item {
     font-size: 1.25rem;
+  }
+}
+
+/* Music Cards Styles */
+.music-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+  max-width: 500px;
+}
+
+.music-card {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: #f9f9f9;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid #eee;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.music-card:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+  border-color: #ddd;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.music-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #702B0E;
+  background-color: rgba(112, 43, 14, 0.1);
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.music-icon-box svg {
+  width: 16px;
+  height: 16px;
+}
+
+.music-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-song-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #313131;
+}
+
+.card-singer-name {
+  font-size: 0.75rem;
+  color: #666;
+  line-height: 1.2;
+}
+
+@media (max-width: 600px) {
+  .music-cards-grid {
+    grid-template-columns: 1fr;
   }
 }
 </style>

@@ -1,7 +1,8 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
 import whiteSparkIcon from '@/assets/images/iconoir_spark-solid-white.png'
-import handshakeImg from '@/assets/images/handshaking.jpg'
+import handshakeImg from '@/assets/images/operratingmap.png'
+
 import p1 from '@/assets/images/Partners Logos/partner1.png'
 import p2 from '@/assets/images/Partners Logos/partner2.png'
 import p3 from '@/assets/images/Partners Logos/partner3.png'
@@ -9,6 +10,7 @@ import p4 from '@/assets/images/Partners Logos/partner4.png'
 import p5 from '@/assets/images/Partners Logos/partner5.png'
 import p6 from '@/assets/images/Partners Logos/partner6.png'
 import p7 from '@/assets/images/Partners Logos/partner7.png'
+import p8 from '@/assets/images/Partners Logos/partner8.png'
 
 const { tm } = useI18n()
 </script>
@@ -35,6 +37,7 @@ const { tm } = useI18n()
         
         <!-- Right: Partner Logos Grid -->
         <div class="logos-grid-container">
+          <h2 class="logos-title">{{ $t('partners.logosTitle') }}</h2>
           <div class="logos-grid">
             <div class="logo-item"><img :src="p1" alt="Partner 1" /></div>
             <div class="logo-item"><img :src="p2" alt="Partner 2" /></div>
@@ -43,6 +46,7 @@ const { tm } = useI18n()
             <div class="logo-item"><img :src="p5" alt="Partner 5" /></div>
             <div class="logo-item"><img :src="p6" alt="Partner 6" /></div>
             <div class="logo-item"><img :src="p7" alt="Partner 7" /></div>
+            <div class="logo-item"><img :src="p8" alt="Partner 8" /></div>
           </div>
         </div>
       </div>
@@ -112,9 +116,9 @@ const { tm } = useI18n()
 /* Hero Section */
 .partners-hero {
   background-color: #8B4513;
-  background-image: linear-gradient(rgba(139, 69, 19, 0.9), rgba(139, 69, 19, 0.85)), url('@/assets/images/home-about-section-background.jpg');
+  background-image: linear-gradient(rgba(139, 69, 19, 0.9), rgba(139, 69, 19, 0.85)), url('@/assets/images/containerspage.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   padding: 6rem 6rem;
   color: white;
 }
@@ -143,7 +147,7 @@ const { tm } = useI18n()
 
 /* Grid Section */
 .partners-grid-section {
-  background-color: white;
+  background-color: #fcfcfc;
 }
 
 .grid-container {
@@ -160,17 +164,30 @@ const { tm } = useI18n()
 .full-bleed-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+  padding: 4rem;
 }
 
 .logos-grid-container {
   width: 50%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 2rem;
   background-color: #fcfcfc;
+}
+
+.logos-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #313131;
+  margin-bottom: 3rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .logos-grid {

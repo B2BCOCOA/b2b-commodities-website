@@ -130,7 +130,7 @@ const { tm } = useI18n()
 }
 
 .hero-header {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .hero-subtitle {
@@ -152,11 +152,12 @@ const { tm } = useI18n()
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
   line-height: 1.1;
   color: #542612;
   font-weight: 900;
   padding-right: 4rem;
+  text-align: justify;
 }
 
 .hero-inner-split {
@@ -306,7 +307,7 @@ const { tm } = useI18n()
   }
 
   .hero-title {
-    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
     padding-right: 0;
   }
 
@@ -358,7 +359,7 @@ const { tm } = useI18n()
   }
 
   .hero-title {
-    font-size: clamp(1.75rem, 5vw, 2.25rem);
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
     padding-right: 0;
     color: #542612;
   }

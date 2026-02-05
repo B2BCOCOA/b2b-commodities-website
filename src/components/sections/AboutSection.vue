@@ -1,14 +1,78 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
+import { ref, onMounted, onUnmounted } from 'vue'
 // Actual about section images
 import img1 from '@/assets/images/home-about-section-pic1.jpg'
 import img2 from '@/assets/images/home-about-section-pic2.jpg'
 import img3 from '@/assets/images/home-about-section-pic3.jpg'
 import img4 from '@/assets/images/home-about-section-pic4.jpg'
+import aboutImage1 from '@/assets/images/aboutimage1.jpg'
+import aboutImage2 from '@/assets/images/aboutimage2.jpg'
+import aboutImage3 from '@/assets/images/aboutimage3.jpg'
+import aboutImage4 from '@/assets/images/aboutimage4.jpg'
 import bgImage from '@/assets/images/home-about-section-background.jpg'
 import sparkIcon from '@/assets/images/iconoir_spark-solid-brown.png'
 
 const { tm } = useI18n()
+
+// Create image sets for rotation
+const imageSet1 = [img1, aboutImage1]
+const imageSet2 = [img2, aboutImage2]
+const imageSet3 = [img3, aboutImage3]
+const imageSet4 = [img4, aboutImage4]
+
+// Current index for rotation
+const currentImageIndex = ref(0)
+let rotationInterval
+
+// Track overlay images and their fade state
+const overlayImages = ref({
+  img1: null,
+  img2: null,
+  img3: null,
+  img4: null,
+  visible: false
+})
+
+const currentImages = ref({
+  img1: imageSet1[0],
+  img2: imageSet2[0],
+  img3: imageSet3[0],
+  img4: imageSet4[0]
+})
+
+const rotateImages = () => {
+  // Prepare next images
+  const nextIndex = (currentImageIndex.value + 1) % 2
+  overlayImages.value = {
+    img1: imageSet1[nextIndex],
+    img2: imageSet2[nextIndex],
+    img3: imageSet3[nextIndex],
+    img4: imageSet4[nextIndex],
+    visible: true
+  }
+  // After fade duration, update base images and hide overlay
+  setTimeout(() => {
+    currentImageIndex.value = nextIndex
+    currentImages.value = {
+      img1: imageSet1[nextIndex],
+      img2: imageSet2[nextIndex],
+      img3: imageSet3[nextIndex],
+      img4: imageSet4[nextIndex]
+    }
+    overlayImages.value.visible = false
+  }, 1200)
+}
+
+onMounted(() => {
+  rotationInterval = setInterval(rotateImages, 7000)
+})
+
+onUnmounted(() => {
+  if (rotationInterval) {
+    clearInterval(rotationInterval)
+  }
+})
 </script>
 
 <template>
@@ -18,25 +82,29 @@ const { tm } = useI18n()
       <div class="about-images">
         <div class="image-grid">
           <div class="grid-item">
-            <img :src="img1" alt="Cocoa" />
+            <img :src="currentImages.img1" alt="Cocoa" class="rotating-image base-image" />
+            <img v-if="overlayImages.visible" :src="overlayImages.img1" class="rotating-image overlay-image fade-in" alt="Cocoa next" />
             <div class="image-overlay overlay-1">
               <span>{{ tm('about.imageOverlays')[0] }}</span>
             </div>
           </div>
           <div class="grid-item">
-            <img :src="img2" alt="Soybeans" />
+            <img :src="currentImages.img2" alt="Soybeans" class="rotating-image base-image" />
+            <img v-if="overlayImages.visible" :src="overlayImages.img2" class="rotating-image overlay-image fade-in" alt="Soybeans next" />
             <div class="image-overlay overlay-2">
               <span>{{ tm('about.imageOverlays')[1] }}</span>
             </div>
           </div>
           <div class="grid-item">
-            <img :src="img3" alt="Cotton" />
+            <img :src="currentImages.img3" alt="Cotton" class="rotating-image base-image" />
+            <img v-if="overlayImages.visible" :src="overlayImages.img3" class="rotating-image overlay-image fade-in" alt="Cotton next" />
             <div class="image-overlay overlay-3">
               <span>{{ tm('about.imageOverlays')[2] }}</span>
             </div>
           </div>
           <div class="grid-item">
-            <img :src="img4" alt="Coffee" />
+            <img :src="currentImages.img4" alt="Coffee" class="rotating-image base-image" />
+            <img v-if="overlayImages.visible" :src="overlayImages.img4" class="rotating-image overlay-image fade-in" alt="Coffee next" />
             <div class="image-overlay overlay-4">
               <span>{{ tm('about.imageOverlays')[3] }}</span>
             </div>
@@ -51,7 +119,7 @@ const { tm } = useI18n()
           {{ $t('about.title') }}
         </div>
         <h2 class="about-title">{{ $t('about.heading') }}</h2>
-        <p class="about-description">
+          <p class="about-description">
           {{ $t('about.description') }}
         </p>
 
@@ -153,7 +221,26 @@ const { tm } = useI18n()
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  position: absolute;
+  inset: 0;
+}
+
+.grid-item img.base-image {
+  z-index: 1;
+}
+
+.grid-item img.overlay-image {
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.grid-item img.overlay-image.fade-in {
+  opacity: 1;
+}
+
+.grid-item img.rotating-image {
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .image-overlay {
@@ -223,7 +310,7 @@ const { tm } = useI18n()
   font-size: 2.5rem;
   line-height: 1.2;
   color: #542612;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   font-weight: 700;
 }
 
@@ -231,7 +318,7 @@ const { tm } = useI18n()
   font-size: 1rem;
   line-height: 1.7;
   color: #6b7280;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .mission-section h3 {
@@ -272,7 +359,7 @@ const { tm } = useI18n()
 .badges {
   display: flex;
   gap: 2rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .badge-item {

@@ -10,7 +10,7 @@
   "home": {
     "welcome": "Welcome to B2B Commodities",
     "subtitle": "Premium Commodities for Global Trade",
-    "title": "Cocoa, coffee, avocado oil, cotton, and more..",
+    "title": "Cocoa Beans, Cocoa Products, Chocolate, Coffee, Cotton, Groundnuts, Cashew Nuts, Sesame And More..",
     "learnMore": "Learn More About Us",
     "globalReach": "High-quality commodities sourced from Africa and Europe.",
     "reliableDelivery": "Reliable delivery and quality assurance for every shipment.",
@@ -24,7 +24,7 @@
   "about": {
     "title": "ABOUT US",
     "heading": "Premium commodities from source to global markets",
-    "description": "We're more than a trading company.. We are a trusted link between producers and buyers. We work closely with partners across Africa and Europe to source high-quality commodities and deliver them reliably to international markets.",
+    "description": "We're more than a trading company. We are a trusted link between producers and buyers, dedicated to integrity and partnership. We work closely with partners across Africa and Europe to source high-quality commodities and deliver them reliably to international markets. Our deep expertise and commitment build the confidence that turns transactions into lasting relationships.",
     "missionTitle": "Our Mission:",
     "missionItems": [
       "Ensure consistent quality and transparent sourcing",
@@ -44,7 +44,19 @@
   "products": {
     "hero": {
       "title": "The Products We Trade",
-      "subtitle": "Cocoa products, green coffee, soya derivatives, cashew and sesame, groundnuts, exotic dried fruits, raw cotton, and other tropical commodities."
+      "subtitle": [
+        "Cocoa Beans",
+        "Cocoa Mass",
+        "Cocoa Butter & Powders",
+        "Chocolate",
+        "Raw Cotton",
+        "Cotton Gin Motes & Linters",
+        "Groundnuts",
+        "Cashew Nuts & Kernels",
+        "Sesame White & Black",
+        "Dried Fruits",
+        "Other Tropical Commodities"
+      ]
     },
     "section1": {
       "title": "Global Commodity Sourcing",
@@ -71,7 +83,8 @@
     "card2": {
       "title": "Quality, Compliance & Transparency",
       "description": "Our cooperation with global logistics and inspection partners ensures products meet international standards and arrive as specified."
-    }
+    },
+    "logosTitle": "Partners of Our Group Companies"
   },
   "founder": {
     "hero": {
@@ -84,7 +97,7 @@
       "bio": "Grzegorz Winiarek is an economist and international commodities expert with over 20 years of experience in trading cocoa, coffee, cotton, nuts, dairy, meat, and other bulk products. As co-founder of B2B Commodities, he connects suppliers from Africa, Asia, and Latin America with markets in Europe and Poland, creating global trade opportunities.",
       "linkedin": "Visit his LinkedIn",
       "extra": "Beyond business, he is passionate about sports and world music.",
-      "tracksTitle": "Some of his favorite tracks include:"
+      "tracksTitle": "You can listen to some of his favorite tracks from the links below:"
     }
   },
   "contact": {

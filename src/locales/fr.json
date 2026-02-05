@@ -10,7 +10,7 @@
   "home": {
     "welcome": "Bienvenue chez B2B Commodities",
     "subtitle": "Marchandises de première qualité pour le commerce mondial",
-    "title": "Cacao, café, huile d'avocat, coton, et plus..",
+    "title": "Fèves de Cacao, Produits de Cacao, Chocolat, Café, Coton, Arachides, Noix de Cajou, Sésame et plus..",
     "learnMore": "En savoir plus sur nous",
     "globalReach": "Produits de haute qualité provenant d'Afrique et d'Europe.",
     "reliableDelivery": "Livraison fiable et assurance qualité pour chaque expédition.",
@@ -24,7 +24,7 @@
   "about": {
     "title": "À PROPOS DE NOUS",
     "heading": "Produits de première qualité de la source aux marchés mondiaux",
-    "description": "Nous sommes plus qu'une société de négoce.. Nous sommes un lien de confiance entre producteurs et acheteurs. Nous travaillons en étroite collaboration avec des partenaires à travers l'Afrique et l'Europe pour sourcer des produits de haute qualité et les livrer de manière fiable sur les marchés internationaux.",
+    "description": "Nous sommes plus qu'une société de négoce. Nous sommes un lien de confiance entre producteurs et acheteurs, dédiés à l'intégrité et au partenariat. Nous travaillons en étroite collaboration avec des partenaires à travers l'Afrique et l'Europe pour sourcer des produits de haute qualité et les livrer de manière fiable sur les marchés internationaux. Notre expertise approfondie et notre engagement créent la confiance qui transforme les transactions en relations durables.",
     "missionTitle": "Notre mission :",
     "missionItems": [
       "Assurer une qualité constante et un approvisionnement transparent",
@@ -44,7 +44,19 @@
   "products": {
     "hero": {
       "title": "Les produits que nous négocions",
-      "subtitle": "Produits à base de cacao, café vert, dérivés de soja, noix de cajou et sésame, arachides, fruits secs exotiques, coton brut et autres produits tropicaux."
+      "subtitle": [
+        "Fèves de Cacao",
+        "Masse de Cacao",
+        "Beurre de Cacao & Poudres",
+        "Chocolat",
+        "Coton Brut",
+        "Débris & Fibres de Coton",
+        "Arachides",
+        "Noix de Cajou & Amandes",
+        "Sésame Blanc & Noir",
+        "Fruits Secs",
+        "Autres Produits Tropicaux"
+      ]
     },
     "section1": {
       "title": "Sourcing mondial de marchandises",
@@ -71,7 +83,8 @@
     "card2": {
       "title": "Qualité, conformité et transparence",
       "description": "Notre coopération avec des partenaires mondiaux de logistique et d'inspection garantit que les produits répondent aux normes internationales et arrivent comme spécifié."
-    }
+    },
+    "logosTitle": "Partenaires de notre groupe d'entreprises"
   },
   "founder": {
     "hero": {
@@ -84,7 +97,7 @@
       "bio": "Grzegorz Winiarek est un économiste et expert en marchandises internationales avec plus de 20 ans d'expérience dans le commerce du cacao, du café, du coton, des noix, des produits laitiers, de la viande et d'autres produits en vrac. En tant que co-fondateur de B2B Commodities, il met en relation des fournisseurs d'Afrique, d'Asie et d'Amérique latine avec des marchés en Europe et en Pologne, créant ainsi des opportunités commerciales mondiales.",
       "linkedin": "Visitez son LinkedIn",
       "extra": "Au-delà des affaires, il est passionné par le sport et les musiques du monde.",
-      "tracksTitle": "Certains de ses morceaux préférés incluent :"
+      "tracksTitle": "Vous pouvez écouter certains de ses morceaux préférés via les liens ci-dessous :"
     }
   },
   "contact": {

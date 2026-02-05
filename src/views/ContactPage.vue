@@ -50,9 +50,9 @@ const { tm } = useI18n()
 /* Hero Section */
 .contact-hero {
   background-color: #8B4513;
-  background-image: linear-gradient(rgba(139, 69, 19, 0.9), rgba(139, 69, 19, 0.85)), url('@/assets/images/home-about-section-background.jpg');
+  background-image: linear-gradient(rgba(139, 69, 19, 0.9), rgba(139, 69, 19, 0.85)), url('@/assets/images/containerspage.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   padding: 6rem 6rem;
   color: white;
 }
