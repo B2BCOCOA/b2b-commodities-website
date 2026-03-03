@@ -19,7 +19,7 @@
               <span>{{ $t('founder.profile.badge') }}</span>
             </div>
             
-            <h2 class="founder-title">Meet <span>Grzegorz Winiarek</span></h2>
+            <h2 class="founder-title">Meet<br /><span>Grzegorz P. Winiarek</span></h2>
             
             <p class="founder-bio">
               {{ $t('founder.profile.bio') }}
@@ -228,7 +228,7 @@ import musicNoteIcon from '@/assets/images/music-note.png'
 }
 
 .profile-info {
-  width: 50%;
+  width: 60%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -236,7 +236,7 @@ import musicNoteIcon from '@/assets/images/music-note.png'
 }
 
 .info-inner {
-  max-width: 600px;
+  max-width: 700px;
 }
 
 .about-badge {
@@ -260,9 +260,9 @@ import musicNoteIcon from '@/assets/images/music-note.png'
 }
 
 .founder-title {
-  font-size: 3.5rem;
+  font-size: 3.25rem;
   color: #313131;
-  margin-bottom: 2rem;
+  margin-bottom:1.2rem;
   font-weight: 800;
 }
 
@@ -326,7 +326,7 @@ import musicNoteIcon from '@/assets/images/music-note.png'
 }
 
 .profile-image {
-  width: 50%;
+  width: 40%;
   padding: 0;
   margin: 0;
 }

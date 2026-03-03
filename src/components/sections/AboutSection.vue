@@ -174,7 +174,7 @@ onUnmounted(() => {
 <style scoped>
 .about-section {
   padding: 6rem 6rem;
-  background-image: url('@/assets/images/home-about-section-background.jpg');
+  background-image: url('@/assets/images/containerspage.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
