@@ -327,15 +327,21 @@ import musicNoteIcon from '@/assets/images/music-note.png'
 
 .profile-image {
   width: 40%;
-  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
   margin: 0;
 }
 
 .founder-image-full {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: right;
+  max-width: 380px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   display: block;
 }
 
@@ -524,6 +530,7 @@ import musicNoteIcon from '@/assets/images/music-note.png'
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin-top: 1rem;
+  margin-bottom: 3rem;
   max-width: 500px;
 }
 
