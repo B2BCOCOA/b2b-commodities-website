@@ -33,6 +33,11 @@
                 </svg>
               </div>
             </a>
+            
+            <!-- Mobile/Tablet Profile Image (Hidden on Desktop) -->
+            <div class="mobile-profile-image">
+              <img :src="founderImg" alt="Grzegorz Winiarek" class="founder-image-styled" />
+            </div>
 
             <div class="founder-extra">
               <p>{{ $t('founder.profile.extra') }}</p>
@@ -103,7 +108,7 @@
 
         <!-- Right: Full Image -->
         <div class="profile-image">
-          <img :src="founderImg" alt="Grzegorz Winiarek" class="founder-image-full" />
+          <img :src="founderImg" alt="Grzegorz Winiarek" class="founder-image-styled" />
         </div>
       </div>
     </section>
@@ -334,7 +339,12 @@ import musicNoteIcon from '@/assets/images/music-note.png'
   margin: 0;
 }
 
-.founder-image-full {
+.mobile-profile-image {
+  display: none;
+  margin: 1.5rem 0;
+}
+
+.founder-image-styled {
   width: 100%;
   max-width: 380px;
   height: auto;
@@ -471,6 +481,12 @@ import musicNoteIcon from '@/assets/images/music-note.png'
     display: none;
   }
   
+  .mobile-profile-image {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  
   .founder-hero {
     padding: 4rem 3rem;
   }
@@ -503,6 +519,12 @@ import musicNoteIcon from '@/assets/images/music-note.png'
   
   .profile-image {
     display: none;
+  }
+  
+  .mobile-profile-image {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
   }
   
   .founder-title {
